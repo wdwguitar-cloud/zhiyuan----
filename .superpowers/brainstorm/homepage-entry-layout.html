@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>首页知识库入口方案</title>
+  <style>
+    :root {
+      --bg: #140f0d;
+      --panel: #231613;
+      --panel-2: #2f1d19;
+      --line: rgba(231, 196, 139, 0.25);
+      --text: #f6ead6;
+      --muted: #d7c1a3;
+      --accent: #e2b66c;
+      --accent-2: #8f2d3f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top, rgba(162, 73, 41, 0.25), transparent 35%), linear-gradient(180deg, #1b1210, #120d0b);
+      color: var(--text);
+      padding: 28px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .title { font-size: 30px; line-height: 1.2; margin-bottom: 10px; }
+    .subtitle { color: var(--muted); line-height: 1.75; max-width: 920px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 26px; }
+    .card {
+      background: linear-gradient(180deg, rgba(49, 31, 26, 0.98), rgba(33, 22, 18, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+    }
+    .head {
+      padding: 18px 18px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(135deg, rgba(143,45,63,0.14), rgba(226,182,108,0.08));
+    }
+    .badge {
+      display: inline-flex;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(226,182,108,0.35);
+      color: #f6d7a2;
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+    .head h3 { margin-top: 12px; font-size: 22px; }
+    .body { padding: 18px; }
+    .mock-hero {
+      min-height: 220px;
+      border-radius: 18px;
+      border: 1px dashed rgba(227, 193, 133, 0.3);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(226,182,108,0.14), transparent 34%),
+        linear-gradient(180deg, rgba(69,43,35,0.76), rgba(34,22,18,0.9));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      gap: 14px;
+    }
+    .mock-tag { color: #f3d9a8; font-size: 12px; letter-spacing: .08em; }
+    .mock-h1 { font-size: 27px; line-height: 1.15; max-width: 8.5em; }
+    .mock-p { color: var(--muted); line-height: 1.7; font-size: 14px; max-width: 28em; }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      min-height: 40px;
+      border-radius: 999px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-size: 13px;
+    }
+    .btn.primary { background: linear-gradient(135deg, #d3a058, #8f2d3f); border-color: rgba(255,255,255,0.05); }
+    .note { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .box {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      padding: 14px;
+    }
+    .list { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.8; font-size: 14px; }
+    .section { margin-top: 18px; }
+    .mini-title { font-size: 18px; margin-bottom: 10px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat { padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); }
+    .stat strong { display: block; font-size: 14px; color: #f6d7a2; margin-bottom: 5px; }
+    .stat span { color: var(--muted); font-size: 13px; line-height: 1.6; }
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+      body { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="title">首页知识库一级入口，三种放法</h1>
+    <p class="subtitle">你要的是“第一兴趣是文章内容”，所以知识库不应该只是首页里的一段说明，而应该成为能被一眼看见、单独点击、独立进入的一级入口。</p>
+
+    <div class="grid">
+      <section class="card">
+        <div class="head">
+          <span class="badge">方案 A</span>
+          <h3>首屏按钮单独加一颗</h3>
+        </div>
+        <div class="body">
+          <div class="mock-hero">
+            <div class="mock-tag">商业开工 · 知识库 · 转化并列</div>
+            <div class="mock-h1">择吉不是只选一个好日子</div>
+            <p class="mock-p">首屏保留咨询按钮，同时单独放一颗“进入知识库”的按钮，直接把从平台过来的人导去文章首页。</p>
+            <div class="btn-row">
+              <div class="btn primary">进入知识库</div>
+              <div class="btn">咨询&领取</div>
+            </div>
+          </div>
+          <p class="note">优点：最稳，不破坏原有转化。缺点：入口虽然明显，但视觉冲击力一般。</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="head">
+          <span class="badge">方案 B</span>
+          <h3>首屏下方单独一张知识卡</h3>
+        </div>
+        <div class="body">
+          <div class="mock-hero">
+            <div class="mock-tag">首页首屏后，单独出现知识库卡片</div>
+            <div class="split">
+              <div class="box">
+                <div class="mini-title">知识库</div>
+                <p class="mock-p">风物知识库首页、文章、FAQ、史料索引全部收在这里。</p>
+              </div>
+              <div class="box">
+                <div class="mini-title">咨询转化</div>
+                <p class="mock-p">继续保留原有服务入口、案例和顾问说明。</p>
+              </div>
+            </div>
+            <div class="btn-row">
+              <div class="btn primary">进入风物知识库</div>
+            </div>
+          </div>
+          <p class="note">优点：知识轨更像一级版块。缺点：入口比方案 A 稍靠后一点。</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="head">
+          <span class="badge">方案 C</span>
+          <h3>首屏 + 导航双入口</h3>
+        </div>
+        <div class="body">
+          <div class="mock-hero">
+            <div class="mock-tag">顶部导航就能进，首屏也能进</div>
+            <div class="mock-h1">知远风物志</div>
+            <p class="mock-p">导航栏给知识库一个独立入口，首屏再放一次明显按钮，形成双重点击位。</p>
+            <div class="btn-row">
+              <div class="btn primary">知识库</div>
+              <div class="btn primary">进入知识库首页</div>
+            </div>
+          </div>
+          <p class="note">优点：最适合从其他平台过来的访客。缺点：主页会更“内容导向”，转化感稍弱一点。</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="section card" style="margin-top:18px;">
+      <div class="head">
+        <span class="badge">我的判断</span>
+        <h3>推荐顺序</h3>
+      </div>
+      <div class="body">
+        <p class="mock-p">如果你想最大限度兼顾“文章优先”和“转化不丢”，我建议先做 <strong>方案 A + 方案 C</strong>：导航有知识库，首屏也有独立入口。这样用户一进来就知道这里不只是卖服务，而是有内容可读。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

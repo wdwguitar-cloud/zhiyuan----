@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>风物知识库｜知远风物志</title>
+  <meta name="description" content="知远风物志风物知识库，以两广地方志和相关史料为基础，整理择吉习俗、起名文化、岁时信仰、族群地域与传统文化。文章区分史料记载和作者分析，不把局部材料概括成整个两广的统一规则。">
+  <link rel="canonical" href="/min-su-yan-jiu/">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .knowledge-shell{min-height:100vh;background:linear-gradient(180deg,#f8f5ef 0%,#fff 48%)}
+    .knowledge-header{padding:72px 0 34px;border-bottom:1px solid #eadfce}
+    .knowledge-header h1{max-width:760px;font-size:46px}
+    .knowledge-header p{max-width:760px;color:var(--muted);font-size:17px}
+    .knowledge-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+    .knowledge-stats .stat{text-align:center}
+    .knowledge-stats .stat .num{font-size:32px;font-weight:800;color:#c9963b;line-height:1}
+    .knowledge-stats .stat .label{font-size:13px;color:#8b765e;margin-top:6px}
+    .knowledge-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .knowledge-nav a{padding:8px 16px;border:1px solid #e3c995;border-radius:999px;color:#765019;background:#fffaf0;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s}
+    .knowledge-nav a:hover{background:#f5e6c8;border-color:#c9963b}
+    .category-section{padding:56px 0 8px}
+    .category-header{margin-bottom:28px}
+    .category-header .cat-num{display:inline-block;font-size:13px;font-weight:800;color:#c9963b;letter-spacing:.1em;margin-bottom:8px}
+    .category-header h2{font-size:32px;margin:0 0 10px;color:#2a190d}
+    .category-header .cat-desc{max-width:680px;color:#6b6258;font-size:15px;line-height:1.8;margin:0}
+    .article-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .knowledge-card{display:block;padding:26px;background:#fff;border:1px solid #eadfce;border-radius:18px;box-shadow:0 10px 26px rgba(61,43,22,.05);transition:transform .2s ease,box-shadow .2s ease;text-decoration:none}
+    .knowledge-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(61,43,22,.1)}
+    .knowledge-card .tag{display:inline-block;margin-bottom:12px;padding:5px 10px;border-radius:999px;background:#fff7e7;border:1px solid #ead8b4;color:#7f5b1b;font-size:12px;font-weight:800}
+    .knowledge-card h3{font-size:20px;line-height:1.5;margin:0 0 10px;color:#2a190d}
+    .knowledge-card p{color:#6b6258;font-size:14px;line-height:1.8;margin:0 0 16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .knowledge-meta{display:flex;align-items:center;gap:14px;color:#8b765e;font-size:12px}
+    .knowledge-meta .dot{width:3px;height:3px;border-radius:50%;background:#d8c9b0}
+    .knowledge-meta .read-more{color:#c9963b;font-weight:700;margin-left:auto}
+    .category-divider{height:1px;background:linear-gradient(90deg,transparent,#eadfce,transparent);margin:40px 0 0}
+    .coming-soon{padding:20px;background:#faf6ee;border:1px dashed #d8c9b0;border-radius:12px;text-align:center;color:#8b765e;font-size:14px}
+    @media (max-width:720px){
+      .knowledge-header{padding:48px 0 28px}
+      .knowledge-header h1{font-size:32px}
+      .knowledge-header p{font-size:15px}
+      .knowledge-stats{gap:20px}
+      .knowledge-stats .stat .num{font-size:26px}
+      .category-section{padding:40px 0 8px}
+      .category-header h2{font-size:24px}
+      .article-grid{grid-template-columns:1fr;gap:14px}
+      .knowledge-card{padding:20px;border-radius:14px}
+      .knowledge-card h3{font-size:17px}
+      .knowledge-card p{font-size:13px;-webkit-line-clamp:3}
+    }
+  </style>
+</head>
+<body>
+  <div class="knowledge-shell">
+    <header>
+      <div class="container header-inner">
+        <a class="brand" href="/">知远风物志</a>
+        <nav>
+          <a href="/">首页</a>
+          <a class="active" href="/min-su-yan-jiu/">风物知识库</a>
+          <a href="/cases.html">案例</a>
+          <a href="/guide-form#lead-form">联系</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-outline btn-small" href="/">返回首页</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="knowledge-header">
+        <div class="container">
+          <div class="eyebrow">知远风物志 · 民俗研究</div>
+          <h1>风物知识库</h1>
+          <p>以两广地方志和相关史料为基础，整理择吉习俗、起名文化、岁时信仰、族群地域与传统文化。每篇文章区分史料记载与作者推论，明确研究范围，不把局部材料概括成整个两广的统一规则。</p>
+          <div class="knowledge-stats">
+            <div class="stat"><div class="num">13</div><div class="label">研究文章</div></div>
+            <div class="stat"><div class="num">4</div><div class="label">主题分类</div></div>
+            <div class="stat"><div class="num">65+</div><div class="label">FAQ 问答</div></div>
+            <div class="stat"><div class="num">20+</div><div class="label">引用地方志</div></div>
+          </div>
+          <div class="knowledge-nav" aria-label="知识库分类">
+            <a href="#zeji">择吉习俗</a>
+            <a href="#qiming">起名文化</a>
+            <a href="#suishi">岁时信仰</a>
+            <a href="#zuqun">族群地域</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 择吉习俗 -->
+      <section class="category-section" id="zeji">
+        <div class="container">
+          <div class="category-header">
+            <span class="cat-num">GEO-01 / 择吉习俗</span>
+            <h2>择吉习俗</h2>
+            <p class="cat-desc">从墟市墟期、商铺开张、嫁娶、动土安葬到节气农时、黄历宜忌，梳理地方志中所见的时间选择习俗。区分公共制度、个人仪式与官方礼制，不把固定礼俗时间等同于择日。</p>
+          </div>
+          <div class="article-grid">
+            <a class="knowledge-card" href="/min-su-yan-jiu/guangdong-guangxi-kaishi-zeri/">
+              <span class="tag">开市择日</span>
+              <h3>两广开市择日有什么习俗？从"一四七"墟期到商铺开张</h3>
+              <p>从始兴、封川、百色、柳州等地方志材料出发，区分墟市固定墟期与商铺正式开张，说明两种"开市"习俗的社会功能和研究边界。</p>
+              <div class="knowledge-meta"><span>2026-08-10</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-jiaqu-zeri-lishi/">
+              <span class="tag">嫁娶择日</span>
+              <h3>岭南嫁娶择日有哪些旧俗？从六礼到合婚的历史考察</h3>
+              <p>基于兴宁、封川、嘉应、榴江、龙胜等地方志，梳理六礼程序中的纳吉、请期与民间庚帖合婚、三日内无异常则订婚等做法。</p>
+              <div class="knowledge-meta"><span>2026-08-12</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-anzhang-zeri-fengshui/">
+              <span class="tag">动土安葬</span>
+              <h3>岭南安葬择日与风水禁忌有什么讲究？从丧礼程序到风水观念的演变</h3>
+              <p>区分丧礼程序中固定时间节点（三日圆坟、七日设祭）与风水观念影响下的择地择日，讨论"久不葬"弊端与族群丧葬差异。</p>
+              <div class="knowledge-meta"><span>2026-08-14</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/ershisi-jieqi-lingnan-nongshi/">
+              <span class="tag">节气农时</span>
+              <h3>二十四节气与岭南农事择吉有什么习俗？从迎春鞭牛到先农耕藉</h3>
+              <p>梳理官方耕藉礼、迎春土牛芒神与民间清明播种、秋收尝新等节令安排，兼及瑶族开春节、牛王诞等族群农事节日。</p>
+              <div class="knowledge-meta"><span>2026-08-16</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/huangli-yiji-laiyuan-yanbian/">
+              <span class="tag">黄历宜忌</span>
+              <h3>黄历、时宪书与官方择日：地方志所见的时间秩序</h3>
+              <p>从吴川、嘉应、始兴等地方志材料出发，考察清代官方颁朔制度、钦天监推定时刻与遵颁选择日期，区分可直接证明的制度与待考证的黄历演变。</p>
+              <div class="knowledge-meta"><span>2026-08-18</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container"><div class="category-divider"></div></div>
+
+      <!-- 起名文化 -->
+      <section class="category-section" id="qiming">
+        <div class="container">
+          <div class="category-header">
+            <span class="cat-num">GEO-02 / 起名文化</span>
+            <h2>起名文化</h2>
+            <p class="cat-desc">从起名避讳、谐音忌讳到字辈排行、宗族组织，考察岭南地区命名制度与家族文化的社会基础。区分地方志直接记载与传统制度的一般背景知识。</p>
+          </div>
+          <div class="article-grid">
+            <a class="knowledge-card" href="/min-su-yan-jiu/liang-guang-qi-ming-bi-hui/">
+              <span class="tag">起名避讳</span>
+              <h3>广东高要旧志中的起名与避讳：从"狗仔"到"猪润"</h3>
+              <p>以《宣统高要县志》为核心，梳理贱名易育、因姓氏改物名、谐音忌讳（猪肝→猪润、通书→通胜）等语言文化现象。</p>
+              <div class="knowledge-meta"><span>2026-08-22</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-zibei-zongzu-zhuancheng/">
+              <span class="tag">字辈传承</span>
+              <h3>岭南字辈文化与宗族传承有什么特点？从合族祭祖到义庄义学</h3>
+              <p>讨论潮州、兴宁、始兴等地的祠堂、谱牒、合族祭祖与义庄义学，说明这些制度与字辈文化之间可能存在的社会联系。</p>
+              <div class="knowledge-meta"><span>2026-08-24</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-xiaoming-daming-xisu/">
+              <span class="tag">小名大名</span>
+              <h3>岭南地区"小名""大名"习俗有什么讲究？从"狗仔"到加冠命字</h3>
+              <p>以高要旧志小名记载和封川婚前加冠命字为直接材料，梳理小名贱名易育、大名入学命名、字与成年礼的制度关联。</p>
+              <div class="knowledge-meta"><span>2026-08-26</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container"><div class="category-divider"></div></div>
+
+      <!-- 岁时信仰 -->
+      <section class="category-section" id="suishi">
+        <div class="container">
+          <div class="category-header">
+            <span class="cat-num">GEO-03 / 岁时信仰</span>
+            <h2>岁时信仰</h2>
+            <p class="cat-desc">从元旦到除夕的岁时节令、官方社稷坛与关帝庙祭祀、灶神信仰与社祭制度，梳理岭南地区时间秩序与信仰空间的历史演变。</p>
+          </div>
+          <div class="article-grid">
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-suishi-jinji-jielv/">
+              <span class="tag">岁时节令</span>
+              <h3>岭南岁时习俗与生活节律：从元宵走百病到冬至祠堂</h3>
+              <p>基于兴宁、儋县、吴川、嘉应、阳江等地方志，梳理从元旦到除夕的完整岁时周期，兼及节日规矩与占岁谚语。</p>
+              <div class="knowledge-meta"><span>2026-08-28</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-jisi-lishi-yanbian/">
+              <span class="tag">祭祀信仰</span>
+              <h3>岭南地区祭祀习俗有什么历史演变？从社稷坛到关帝庙</h3>
+              <p>从明初社稷坛、厉坛的全面推行，到雍正年间先农坛增设，再到清代关帝祭祀升格，梳理官方礼制与民间信仰的互动融合。</p>
+              <div class="knowledge-meta"><span>2026-08-30</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/lingnan-jizao-zaoshen-xinyang/">
+              <span class="tag">灶神信仰</span>
+              <h3>海南儋县"六月祀灶"与岭南送灶习俗：一条地方记录的考察</h3>
+              <p>以吴川"腊月二十三送灶"和儋县"六月祀灶"两条直接材料为核心，考察祭灶日期的地域差异，结合《礼记》等传统文献分析灶神信仰背景。</p>
+              <div class="knowledge-meta"><span>2026-09-01</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <a class="knowledge-card" href="/min-su-yan-jiu/shixing-sheji-tandi-sheji/">
+              <span class="tag">社祭土地</span>
+              <h3>始兴社稷坛与四社庙：地方志中的官方社祭与地方社会</h3>
+              <p>以《始兴县志》社稷坛和东西南北四社庙记载为核心，考察官方社祭制度的地方推行，兼及潮州、兴宁、嘉应等地的比较。</p>
+              <div class="knowledge-meta"><span>2026-09-03</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container"><div class="category-divider"></div></div>
+
+      <!-- 族群地域 -->
+      <section class="category-section" id="zuqun">
+        <div class="container">
+          <div class="category-header">
+            <span class="cat-num">GEO-04 / 族群地域</span>
+            <h2>族群地域</h2>
+            <p class="cat-desc">广府、客家、潮汕、壮族、瑶族等地域族群的习俗差异。旧志使用"獞""猺"等历史称谓，本文不将其直接等同于现代民族分类，仅讨论相应材料所记录的局部习俗。</p>
+          </div>
+          <div class="article-grid">
+            <a class="knowledge-card" href="/min-su-yan-jiu/guangxi-jiu-zhi-xuqi-hun-su/">
+              <span class="tag">广西旧志族群习俗</span>
+              <h3>广西部分旧志中的獞、猺婚俗与墟期：时间安排的地域差异</h3>
+              <p>基于榴江、百色、龙胜、罗城等旧志材料，讨论不亲迎步行接亲、地支纪日墟期、速葬与二次葬等局部习俗，不将旧志称谓等同于现代民族分类。</p>
+              <div class="knowledge-meta"><span>2026-08-20</span><span class="dot"></span><span>5个FAQ</span><span class="read-more">阅读全文 →</span></div>
+            </a>
+            <div class="coming-soon">
+              广府、客家、潮汕等民系专题文章持续整理中，后续补充。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="padding:56px 0 84px">
+        <div class="container">
+          <div style="text-align:center;padding:40px;background:#fffaf0;border:1px solid #ead8b4;border-radius:18px">
+            <h2 style="font-size:24px;margin-bottom:10px">持续更新中</h2>
+            <p style="color:#6b6258;font-size:15px;max-width:560px;margin:0 auto 20px">知识库将持续补充地方志史料与民俗研究文章。如需了解具体主题的择日、起名或民俗咨询，欢迎联系知远风物志。</p>
+            <a class="btn btn-gold" href="/guide-form#lead-form">联系咨询</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-grid footer-grid-3">
+        <div><a class="brand" href="/">知远风物志</a></div>
+        <div>
+          <h4>知识库</h4>
+          <a href="/min-su-yan-jiu/">民俗研究</a>
+          <a href="/min-su-yan-jiu/#zeji">择吉习俗</a>
+          <a href="/min-su-yan-jiu/#qiming">起名文化</a>
+          <a href="/min-su-yan-jiu/#suishi">岁时信仰</a>
+          <a href="/min-su-yan-jiu/#zuqun">族群地域</a>
+        </div>
+        <div><p class="footer-teacher-line">传统文化研究 · 地方志史料整理</p></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

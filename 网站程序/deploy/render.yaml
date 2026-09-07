@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: kaigong-consultant-online
+    env: node
+    rootDir: .
+    buildCommand: npm --prefix backend install && npm --prefix app-frontend install && npm --prefix app-frontend run build
+    startCommand: npm --prefix backend start
+    envVars:
+      - key: PORT
+        value: 8787
+      - key: SITE_ORIGIN
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: WEBHOOK_TYPE
+        value: generic
+      - key: ALLOW_OPEN_ADMIN_WHEN_NO_TOKEN
+        value: false

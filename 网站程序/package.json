@@ -1,0 +1,12 @@
+{
+  "name": "kaigong-consultant-complete-site",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Deployment-ready 2.0 bundle for the kaigong consultant site.",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix app-frontend install",
+    "build": "npm --prefix app-frontend run build",
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev"
+  }
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="1400" height="900" fill="#f4f8fc"/>
+<text x="80" y="78" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">开工流程的责任边界</text>
+<text x="80" y="118" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#65758a">你不是工程监理，也不是安全负责人。你做的是民俗日期与流程协调建议。</text>
+<g font-family="Arial, PingFang SC, Microsoft YaHei">
+<rect x="80" y="180" width="380" height="520" rx="24" fill="#e9f8f0" stroke="#21734a" stroke-width="4"/>
+<text x="125" y="245" font-size="34" fill="#17683d" font-weight="900">你可以负责</text>
+<text x="125" y="305" font-size="24" fill="#26394f">- 日期与时辰建议</text>
+<text x="125" y="350" font-size="24" fill="#26394f">- 开工流程顺序</text>
+<text x="125" y="395" font-size="24" fill="#26394f">- 供品与物料清单</text>
+<text x="125" y="440" font-size="24" fill="#26394f">- 人员分工建议</text>
+<text x="125" y="485" font-size="24" fill="#26394f">- 注意事项提醒</text>
+<text x="125" y="530" font-size="24" fill="#26394f">- 项目资料初审</text>
+<rect x="510" y="180" width="380" height="520" rx="24" fill="#fffaf0" stroke="#c89135" stroke-width="4"/>
+<text x="555" y="245" font-size="34" fill="#7f5b1b" font-weight="900">必须让客户确认</text>
+<text x="555" y="305" font-size="24" fill="#26394f">- 物业 / 园区规则</text>
+<text x="555" y="350" font-size="24" fill="#26394f">- 施工队进场时间</text>
+<text x="555" y="395" font-size="24" fill="#26394f">- 消防 / 安全要求</text>
+<text x="555" y="440" font-size="24" fill="#26394f">- 工程许可手续</text>
+<text x="555" y="485" font-size="24" fill="#26394f">- 特殊作业安排</text>
+<text x="555" y="530" font-size="24" fill="#26394f">- 是否能按时执行</text>
+<rect x="940" y="180" width="380" height="520" rx="24" fill="#f8eeee" stroke="#9d2b2b" stroke-width="4"/>
+<text x="985" y="245" font-size="34" fill="#9d2b2b" font-weight="900">不要承诺/不要替代</text>
+<text x="985" y="305" font-size="24" fill="#26394f">- 不承诺发财盈利</text>
+<text x="985" y="350" font-size="24" fill="#26394f">- 不替代工程监理</text>
+<text x="985" y="395" font-size="24" fill="#26394f">- 不替代安全管理</text>
+<text x="985" y="440" font-size="24" fill="#26394f">- 不替代法律审批</text>
+<text x="985" y="485" font-size="24" fill="#26394f">- 不指导危险施工</text>
+<text x="985" y="530" font-size="24" fill="#26394f">- 不保证工程结果</text>
+</g>
+<rect x="80" y="750" width="1240" height="80" rx="18" fill="#fff" stroke="#d9e1ec"/>
+<text x="120" y="800" font-size="28" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">一句话定位：你提供“传统民俗日期与商业开工流程建议”，实际施工与安全由客户和施工方确认。</text>
+</svg>

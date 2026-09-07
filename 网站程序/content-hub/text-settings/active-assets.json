@@ -1,0 +1,22 @@
+{
+    "qrImage":  "001.png",
+    "teacherImage":  "ChatGPT Image 2026年5月6日 02_34_47.png",
+    "cases":  {
+                  "factory":  "case-factory-real.png",
+                  "store":  "case-store-hotpot.png",
+                  "office":  "case-relocation-company.png"
+              },
+    "pdfs":  {
+                 "commercialStartGuide":  "",
+                 "factoryStartChecklist":  "",
+                 "storeOpeningGuide":  "",
+                 "officeRenovationGuide":  "",
+                 "casePhotoUploadChecklist":  "",
+                 "realCaseRecordTemplate":  "",
+                 "serviceAgreementTemplate":  "",
+                 "clientIntakeFormTemplate":  "",
+                 "delivery199ReviewTemplate":  "",
+                 "delivery999DateTimeTemplate":  "",
+                 "delivery2980FullProcessTemplate":  ""
+             }
+}

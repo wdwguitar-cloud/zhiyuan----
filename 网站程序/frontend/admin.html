@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>线索管理｜V6 运营后台</title>
+<meta name="description" content="V6 运营后台：服务器线索、留言、跟进状态、备注、成交金额、标签、CSV 导出。">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<a class="brand" href="index.html">开工顾问</a>
+<nav><a href="index.html">首页</a><a href="about.html">老师介绍</a><a href="self-check.html">自检器</a><a href="interactive-checklists.html">检查表</a><a href="product-matrix.html">产品矩阵</a><a href="annual-consultant.html">年度顾问</a><a href="partner-exclusive.html">合作专属页</a><a href="traffic-hub.html">流量引擎</a><a href="admin.html" class="active">后台</a></nav>
+<div class="header-actions">
+<a class="btn btn-outline btn-small" href="./assets/guides/commercial-start-guide.pdf" download>下载指引</a>
+<a class="btn btn-gold btn-small" href="/guide-form#lead-form">立即咨询</a>
+</div>
+</div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container page-hero">
+    <div>
+      <div class="eyebrow">V6 运营后台</div>
+      <h1>客户线索跟进系统</h1>
+      <p class="sub">这版后台已经能显示客户留言，并支持修改跟进状态、备注、标签、成交金额和下次回访时间。</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="/guide-form#lead-form">提交测试线索</a>
+        <a class="btn btn-outline" href="backend-guide.html">查看接入说明</a>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>建议跟进顺序</h3>
+      <p>A 类线索优先：7/15/30 天内开工、老板本人或公司负责人、商业项目、留下清晰联系方式。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container admin-panel">
+    <h2>服务器线索记录</h2>
+    <p id="leadSource" class="sub">正在读取数据...</p>
+
+    <div class="admin-help"><strong>V9 话术跟进：</strong>每条线索右侧新增话术选择和一键复制，家人也可以按标准流程回复客户。</div>
+    <div class="admin-help">
+      如果你看不到客户留言，说明旧版后台没有展示 note 字段。V6 已经把“留言/补充说明”加入表格，并且 CSV 也会导出完整字段。
+    </div>
+
+    <div class="crm-summary">
+      <div class="crm-stat"><strong id="sumTotal">0</strong><span>总线索</span></div>
+      <div class="crm-stat"><strong id="sumA">0</strong><span>A 类线索</span></div>
+      <div class="crm-stat"><strong id="sumNew">0</strong><span>新线索</span></div>
+      <div class="crm-stat"><strong id="sumWechat">0</strong><span>已加微信</span></div>
+      <div class="crm-stat"><strong id="sumWon">0</strong><span>已成交</span></div>
+      <div class="crm-stat"><strong id="sumAmount">0</strong><span>成交金额</span></div>
+    </div>
+
+    <div class="crm-toolbar">
+      <input id="adminToken" placeholder="后台密钥 ADMIN_TOKEN，可留空">
+      <select id="filterStatus">
+        <option value="">全部状态</option>
+        <option>新线索</option>
+        <option>已加微信</option>
+        <option>已报价</option>
+        <option>已成交</option>
+        <option>已流失</option>
+        <option>待回访</option>
+      </select>
+      <select id="filterGrade">
+        <option value="">全部等级</option>
+        <option>A 类线索</option>
+        <option>B 类线索</option>
+        <option>C 类线索</option>
+        <option>D 类线索</option>
+      </select>
+      <input id="searchText" placeholder="搜索城市/项目/联系方式/留言">
+      <button class="btn btn-gold" id="reloadLeads">读取服务器线索</button>
+      <button class="btn btn-outline" id="exportCsv">导出完整 CSV</button>
+      <button class="btn btn-outline" id="clearLeads">清空本机备份</button>
+    </div>
+
+    <div class="leads-table-wrap">
+      <table class="leads-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>时间</th>
+            <th>状态</th>
+            <th>等级</th>
+            <th>分数</th>
+            <th>项目类型</th>
+            <th>城市</th>
+            <th>开工时间</th>
+            <th>身份</th>
+            <th>需求</th>
+            <th>联系方式</th>
+            <th>留言/补充说明</th>
+            <th>运营跟进</th>
+          </tr>
+        </thead>
+        <tbody id="leadsBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-grid">
+<div><a class="brand" href="index.html">开工顾问</a><p>老师一对一咨询｜微信预约</p></div>
+<div><h4>重点页面</h4><a href="factory.html">厂房开工</a><a href="store.html">门店开业</a><a href="office.html">办公室装修</a><a href="cases.html">案例中心</a></div>
+<div><h4>补充页面</h4><a href="about.html">老师介绍</a><a href="faq.html">常见问题</a><a href="privacy.html">服务边界</a><a href="admin.html">线索管理</a></div>
+<div><h4>资料领取</h4><a href="./assets/guides/commercial-start-guide.pdf" download>开工流程指引</a><a href="./assets/开工流程指引.html">在线查看资料</a><a href="backend-guide.html">表单接入说明</a></div>
+<div><div class="qr">微信<br>二维码</div><p>请替换真实二维码</p></div>
+</div>
+<div class="container copy">© 商业开工顾问示意网站 V13 ｜工具化引流与产品矩阵</div>
+</footer>
+
+<a class="float-btn" href="/guide-form#lead-form">立即咨询</a>
+<div class="toast" id="toast"></div>
+<script src="./config.js"></script>
+<script src="./script-templates.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

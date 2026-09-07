@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内部工具入口｜商业开工顾问</title>
+  <style>
+    :root {
+      --bg: #120d0b;
+      --panel: rgba(42, 24, 20, 0.9);
+      --panel-soft: rgba(72, 42, 33, 0.68);
+      --line: rgba(222, 187, 121, 0.3);
+      --line-strong: rgba(244, 216, 159, 0.58);
+      --text: #f3ead7;
+      --muted: #d7c3a2;
+      --accent: #e1b768;
+      --accent-strong: #f4d89f;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(147, 49, 32, 0.28), transparent 40%),
+        linear-gradient(180deg, #1f1411 0%, #120d0b 55%, #0d0908 100%);
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    .hero,
+    .section,
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(58, 35, 28, 0.92), rgba(29, 18, 15, 0.94));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      padding: 30px 28px 26px;
+      margin-bottom: 22px;
+    }
+
+    .hero::before,
+    .section::before,
+    .note::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      pointer-events: none;
+      border: 1px solid rgba(255, 230, 181, 0.08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 216, 159, 0.22);
+      background: rgba(255, 239, 210, 0.05);
+      color: var(--accent-strong);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.2;
+      color: #fff4dc;
+    }
+
+    .subtext {
+      margin-top: 14px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .quick-links a,
+    .card a {
+      text-decoration: none;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: linear-gradient(135deg, rgba(154, 86, 36, 0.26), rgba(241, 205, 145, 0.14));
+      color: #fff2d2;
+      font-size: 14px;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .pill:hover,
+    .card a:hover .link-text {
+      transform: translateY(-1px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .section {
+      position: relative;
+      padding: 24px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title h2 {
+      font-size: 24px;
+      color: #fff0cf;
+    }
+
+    .section-title span {
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: 18px;
+      border: 1px solid rgba(225, 183, 104, 0.2);
+      background: linear-gradient(180deg, rgba(88, 49, 37, 0.42), rgba(41, 24, 20, 0.72));
+      padding: 16px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      line-height: 1.45;
+      color: #fff3d8;
+    }
+
+    .card p {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .link-text {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent-strong);
+      font-size: 14px;
+    }
+
+    .note {
+      position: relative;
+      margin-top: 22px;
+      padding: 22px 24px;
+    }
+
+    .note h2 {
+      font-size: 22px;
+      color: #fff0cf;
+    }
+
+    .note ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .note li + li {
+      margin-top: 6px;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        width: min(100% - 24px, 720px);
+        padding: 22px 0 38px;
+      }
+
+      .hero,
+      .section,
+      .note {
+        border-radius: 20px;
+      }
+
+      .hero {
+        padding: 24px 18px 20px;
+      }
+
+      .section,
+      .note {
+        padding: 20px 18px;
+      }
+
+      .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .subtext {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">INTERNAL ONLY / 内部维护入口</div>
+      <h1>内部工具入口</h1>
+      <p class="subtext">
+        这个页面只给你和开发、运营人员使用。它的作用是把后台、内容维护、运营规划、渠道工具、交付资料入口集中到一起，避免这些页面混进客户可见路径里。
+      </p>
+      <div class="quick-links">
+        <a class="pill" href="/">返回首页</a>
+        <a class="pill" href="/guide-form">打开咨询表单页</a>
+        <a class="pill" href="/admin.html">进入线索后台</a>
+        <a class="pill" href="/content-center.html">进入内容中心</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="section">
+        <div class="section-title">
+          <h2>客户可见页面</h2>
+          <span>这些页面可以公开给客户</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>首页 / 顾问页 / 年度顾问页 / 案例页</h3>
+            <p>这些属于正式展示页面，用来承接客户浏览、了解服务和进入咨询流程。</p>
+            <a href="/"><span class="link-text">打开首页 /</span></a>
+            <a href="/advisor.html"><span class="link-text"> 顾问页 /</span></a>
+            <a href="/annual.html"><span class="link-text"> 年度顾问页 /</span></a>
+            <a href="/cases.html"><span class="link-text"> 案例页</span></a>
+          </article>
+          <article class="card">
+            <h3>咨询&领取表单页</h3>
+            <p>所有公开的“继续咨询 / 立即咨询 / 资料领取 / 下载指引”入口，现在都建议统一收口到这里。</p>
+            <a href="/guide-form"><span class="link-text">打开 /guide-form</span></a>
+          </article>
+          <article class="card">
+            <h3>城市页 / SEO 页</h3>
+            <p>这类页面也属于公开页面，主要用于自然搜索、场景承接和关键词覆盖，不属于内部工具。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>后台与内容维护</h2>
+          <span>客户不应看到这些入口</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>线索后台</h3>
+            <p>查看表单提交、跟进状态、导出 CSV，用于内部线索管理。</p>
+            <a href="/admin.html"><span class="link-text">打开 admin.html</span></a>
+          </article>
+          <article class="card">
+            <h3>后台登录</h3>
+            <p>后台登录入口页，和正式客户页面无关。</p>
+            <a href="/admin-login.html"><span class="link-text">打开 admin-login.html</span></a>
+          </article>
+          <article class="card">
+            <h3>内容中心</h3>
+            <p>维护二维码、老师图片、案例图、首页主图和联系信息等当前生效内容。</p>
+            <a href="/content-center.html"><span class="link-text">打开 content-center.html</span></a>
+          </article>
+          <article class="card">
+            <h3>后端接入说明</h3>
+            <p>给开发和维护人员查看，不是用户页面。</p>
+            <a href="/backend-guide.html"><span class="link-text">打开 backend-guide.html</span></a>
+          </article>
+          <article class="card">
+            <h3>正式上线检查</h3>
+            <p>上线前自查、安全检查、环境配置核对用。</p>
+            <a href="/launch-checklist.html"><span class="link-text">打开 launch-checklist.html</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>运营与增长工具</h2>
+          <span>内部策划与投流辅助</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>扩流入口 / 流量增长引擎</h3>
+            <p>用来做流量规划、渠道梳理和增长动作，不应暴露给客户。</p>
+            <a href="/growth-hub.html"><span class="link-text">打开 growth-hub.html /</span></a>
+            <a href="/traffic-hub.html"><span class="link-text"> traffic-hub.html</span></a>
+          </article>
+          <article class="card">
+            <h3>关键词 / 城市矩阵</h3>
+            <p>给内部做 SEO 结构和页面规划使用。</p>
+            <a href="/keyword-map.html"><span class="link-text">打开 keyword-map.html /</span></a>
+            <a href="/city-pages.html"><span class="link-text"> city-pages.html</span></a>
+          </article>
+          <article class="card">
+            <h3>内容日历 / 内容库 / 话术库</h3>
+            <p>内部内容生产工具，包括朋友圈、短视频、微信跟进话术等。</p>
+            <a href="/content-calendar.html"><span class="link-text">内容日历 /</span></a>
+            <a href="/social-content-library.html"><span class="link-text"> 内容库 /</span></a>
+            <a href="/scripts-library.html"><span class="link-text"> 话术库</span></a>
+          </article>
+          <article class="card">
+            <h3>渠道链接生成器</h3>
+            <p>用于渠道追踪链接生成和分发，不是面向客户的落地页。</p>
+            <a href="/channel-link-builder.html"><span class="link-text">打开 channel-link-builder.html</span></a>
+          </article>
+          <article class="card">
+            <h3>AI 问答长尾页</h3>
+            <p>内部整理和批量扩展内容用，不建议直接作为主导航暴露给用户。</p>
+            <a href="/ai-answer-hub.html"><span class="link-text">打开 ai-answer-hub.html</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>交付与流程工具</h2>
+          <span>用于内部交付和标准化</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>客户资料 / 自检 / 互动检查表</h3>
+            <p>用于收集资料、核对完整性和内部辅助判断。</p>
+            <a href="/client-intake.html"><span class="link-text">客户资料 /</span></a>
+            <a href="/self-check.html"><span class="link-text"> 自检器 /</span></a>
+            <a href="/interactive-checklists.html"><span class="link-text"> 互动检查表</span></a>
+          </article>
+          <article class="card">
+            <h3>流程标准 / 产品矩阵 / 线索标签</h3>
+            <p>内部标准文件，用来统一流程、产品说明和线索分级口径。</p>
+            <a href="/process-standard.html"><span class="link-text">流程标准 /</span></a>
+            <a href="/product-matrix.html"><span class="link-text"> 产品矩阵 /</span></a>
+            <a href="/lead-segments.html"><span class="link-text"> 线索标签</span></a>
+          </article>
+          <article class="card">
+            <h3>交付样张 / 交付模板</h3>
+            <p>给内部制作和整理交付资料使用，不应该作为公开导航项给客户展示。</p>
+            <a href="/deliverables.html"><span class="link-text">交付样张 /</span></a>
+            <a href="/delivery-templates.html"><span class="link-text"> 交付模板</span></a>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="note">
+      <h2>使用提醒</h2>
+      <ul>
+        <li>这个入口页只是帮你把内部页面集中起来，现阶段我没有搬动原始文件位置，所以现有网址不会受影响。</li>
+        <li>如果以后要做更严格隔离，可以第二阶段再把这些内部页迁移到单独目录，并加访问权限控制。</li>
+        <li>修改用户正式页面时，仍然优先看 `上线版` 根目录里的“文件修改对照表”。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

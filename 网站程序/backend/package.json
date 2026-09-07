@@ -1,0 +1,18 @@
+{
+  "name": "kaigong-consultant-v13-tool-product-matrix",
+  "version": "2.0.0",
+  "private": true,
+  "description": "商业开工顾问网站 V13：工具化引流、自检器、互动检查表、产品矩阵、年度顾问和合作方专属入口。",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "nanoid": "^5.0.9"
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="1400" height="900" fill="#f4f8fc"/>
+<text x="80" y="80" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">真实案例详情页上图位置示意</text>
+<text x="80" y="120" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#65758a">你只需要按位置替换照片和文字，不需要重新设计页面。</text>
+<rect x="80" y="160" width="1240" height="660" rx="24" fill="#fff" stroke="#d9e1ec"/>
+<rect x="120" y="210" width="760" height="220" rx="18" fill="#0b2547"/>
+<text x="160" y="280" font-size="34" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#fff" font-weight="800">A. 案例首图 / 封面图</text>
+<text x="160" y="325" font-size="24" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#e6bd72">放：项目外观、门头、厂房门口、办公室入口</text>
+<text x="160" y="368" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#eaf1f8">要求：横图 16:9，干净、无遮挡、不要客户隐私</text>
+<rect x="930" y="210" width="330" height="220" rx="18" fill="#fff7e7" stroke="#e6bd72"/>
+<text x="965" y="270" font-size="28" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#7f5b1b" font-weight="900">B. 右侧咨询按钮</text>
+<text x="965" y="318" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#4d5c71">不用换图</text>
+<text x="965" y="355" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#4d5c71">只换微信二维码/联系方式</text>
+<rect x="120" y="470" width="360" height="150" rx="18" fill="#f7fbff" stroke="#d9e1ec"/>
+<text x="150" y="525" font-size="28" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">C. 项目背景</text>
+<text x="150" y="570" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#4d5c71">放项目类型、城市、时间、客户顾虑</text>
+<rect x="520" y="470" width="360" height="150" rx="18" fill="#f7fbff" stroke="#d9e1ec"/>
+<text x="550" y="525" font-size="28" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">D. 客户顾虑</text>
+<text x="550" y="570" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#4d5c71">放客户真实问过的问题</text>
+<rect x="920" y="470" width="340" height="150" rx="18" fill="#f7fbff" stroke="#d9e1ec"/>
+<text x="950" y="525" font-size="28" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">E. 交付内容</text>
+<text x="950" y="570" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#4d5c71">放方案清单和交付样张</text>
+<rect x="120" y="655" width="1140" height="95" rx="18" fill="#fffaf0" stroke="#e6bd72"/>
+<text x="150" y="715" font-size="26" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#7f5b1b" font-weight="900">F. 底部行动按钮：提交类似项目 / 下载指引 / 预约资料初审</text>
+</svg>

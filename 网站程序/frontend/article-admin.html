@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文章管理｜知远风物志后台</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="./styles.css">
+<style>
+  .admin-shell{min-height:100vh;background:#f8f5ef}
+  .admin-main{padding:40px 0 80px}
+  .admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .panel{background:#fff;border:1px solid #eadfce;border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(61,43,22,.05)}
+  .panel h2{font-size:20px;margin-bottom:16px;color:#2a190d}
+  .panel h3{font-size:16px;margin:18px 0 10px;color:#5a3a1f}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:13px;font-weight:700;color:#5a3a1f;margin-bottom:6px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1px solid #d8c9b0;border-radius:8px;font-size:14px;font-family:inherit;background:#fffdf8;box-sizing:border-box}
+  .form-group textarea{min-height:300px;resize:vertical;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.7}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .2s}
+  .btn-gold{background:linear-gradient(135deg,#c9963b,#a67c2e);color:#fff}
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(201,150,59,.3)}
+  .btn-outline{background:#fff;border:1px solid #d8c9b0;color:#5a3a1f}
+  .btn-outline:hover{background:#faf5ec}
+  .btn-danger{background:#fff;border:1px solid #e0b4b4;color:#b34040}
+  .btn-danger:hover{background:#fef0f0}
+  .btn-sm{padding:6px 14px;font-size:13px}
+  .btn-group{display:flex;gap:10px;flex-wrap:wrap}
+  .article-list{max-height:600px;overflow-y:auto}
+  .article-item{padding:14px;border:1px solid #eadfce;border-radius:10px;margin-bottom:10px;background:#fffdf8;transition:all .2s}
+  .article-item:hover{border-color:#d8b982;box-shadow:0 4px 12px rgba(61,43,22,.06)}
+  .article-item .cat-tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#fff7e7;border:1px solid #ead8b4;color:#7f5b1b;font-size:11px;font-weight:700;margin-bottom:6px}
+  .article-item h4{font-size:15px;margin:0 0 4px;color:#2a190d;line-height:1.5}
+  .article-item .meta{font-size:12px;color:#8b765e}
+  .article-item .actions{margin-top:8px;display:flex;gap:8px}
+  .category-section{margin-bottom:24px}
+  .category-section h3{font-size:16px;color:#5a3a1f;border-bottom:2px solid #ead8b4;padding-bottom:6px;margin-bottom:12px}
+  .preview-frame{width:100%;height:600px;border:1px solid #d8c9b0;border-radius:10px;background:#fff}
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);padding:12px 24px;border-radius:8px;color:#fff;font-size:14px;font-weight:600;z-index:9999;opacity:0;transition:opacity .3s}
+  .toast.show{opacity:1}
+  .toast.success{background:#4a8c5f}
+  .toast.error{background:#b34040}
+  .file-drop{border:2px dashed #d8c9b0;border-radius:10px;padding:24px;text-align:center;color:#8b765e;cursor:pointer;transition:all .2s;margin-bottom:16px}
+  .file-drop:hover,.file-drop.dragover{border-color:#c9963b;background:#fffaf0;color:#5a3a1f}
+  .file-drop p{margin:0;font-size:13px}
+  .stat-row{display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+  .stat-card{flex:1;min-width:120px;padding:16px;background:#fffdf8;border:1px solid #eadfce;border-radius:12px;text-align:center}
+  .stat-card .num{font-size:28px;font-weight:800;color:#c9963b}
+  .stat-card .label{font-size:12px;color:#8b765e;margin-top:4px}
+  @media (max-width:900px){.admin-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="admin-shell">
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">知远风物志</a>
+    <nav>
+      <a href="index.html">前台首页</a>
+      <a href="/min-su-yan-jiu/">知识库</a>
+      <a href="content-center.html">内容中心</a>
+      <a href="article-admin.html" class="active">文章管理</a>
+      <a href="admin.html">线索后台</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline btn-small" href="/min-su-yan-jiu/">查看知识库</a>
+    </div>
+  </div>
+</header>
+
+<main class="admin-main">
+  <div class="container">
+    <div class="page-hero" style="margin-bottom:32px">
+      <div>
+        <div class="eyebrow">后台维护</div>
+        <h1>文章管理</h1>
+        <p class="sub">上传 Markdown 文章，自动排版为知识库页面。支持分类管理、实时预览和一键发布。</p>
+      </div>
+    </div>
+
+    <div class="stat-row" id="statRow"></div>
+
+    <div class="admin-grid">
+      <!-- 左侧：文章列表 -->
+      <div class="panel">
+        <h2>已发布文章</h2>
+        <div class="article-list" id="articleList">
+          <p style="color:#8b765e">加载中...</p>
+        </div>
+      </div>
+
+      <!-- 右侧：上传/编辑 -->
+      <div class="panel">
+        <h2 id="formTitle">上传新文章</h2>
+
+        <div class="file-drop" id="fileDrop">
+          <p><strong>拖拽 .md 文件到此处</strong></p>
+          <p>或点击选择文件（支持 Markdown 格式）</p>
+          <input type="file" id="fileInput" accept=".md,.markdown,.txt" style="display:none">
+        </div>
+
+        <form id="articleForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>分类 *</label>
+              <select name="category" required>
+                <option value="择吉习俗">择吉习俗</option>
+                <option value="起名文化">起名文化</option>
+                <option value="岁时信仰">岁时信仰</option>
+                <option value="族群地域">族群地域</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>子分类</label>
+              <input name="subcategory" placeholder="如：开市择日、嫁娶择日">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>发布日期</label>
+              <input type="date" name="publishDate">
+            </div>
+            <div class="form-group">
+              <label>URL Slug（留空自动生成）</label>
+              <input name="slug" placeholder="如：liang-guang-kai-shi">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>文章内容（Markdown）*</label>
+            <textarea name="markdown" required placeholder="# 文章标题&#10;&#10;导语段落...&#10;&#10;## 一、章节标题&#10;&#10;正文内容..."></textarea>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline" id="previewBtn">预览排版</button>
+            <button type="submit" class="btn btn-gold">保存并发布</button>
+            <button type="button" class="btn btn-outline" id="resetBtn" style="margin-left:auto">清空</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 预览区域 -->
+    <div class="panel" style="margin-top:24px" id="previewPanel" style="display:none">
+      <h2>排版预览</h2>
+      <iframe class="preview-frame" id="previewFrame"></iframe>
+    </div>
+  </div>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API_BASE = "";
+let editingSlug = null;
+
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => t.className = 'toast', 2500);
+}
+
+async function loadArticles() {
+  try {
+    const res = await fetch('/api/articles/list');
+    const data = await res.json();
+    renderArticles(data);
+    renderStats(data);
+  } catch (e) {
+    document.getElementById('articleList').innerHTML = '<p style="color:#b34040">加载失败：' + e.message + '</p>';
+  }
+}
+
+function renderStats(data) {
+  const total = data.articles.length;
+  const cats = {};
+  data.articles.forEach(a => { cats[a.category] = (cats[a.category] || 0) + 1; });
+  let html = `<div class="stat-card"><div class="num">${total}</div><div class="label">总文章数</div></div>`;
+  for (const cat of data.categoryOrder) {
+    if (cats[cat]) {
+      html += `<div class="stat-card"><div class="num">${cats[cat]}</div><div class="label">${cat}</div></div>`;
+    }
+  }
+  document.getElementById('statRow').innerHTML = html;
+}
+
+function renderArticles(data) {
+  const list = document.getElementById('articleList');
+  if (data.articles.length === 0) {
+    list.innerHTML = '<p style="color:#8b765e">暂无文章，请在右侧上传。</p>';
+    return;
+  }
+  let html = '';
+  for (const cat of data.categoryOrder) {
+    const items = data.grouped[cat] || [];
+    if (items.length === 0) continue;
+    html += `<div class="category-section"><h3>${cat}（${items.length}篇）</h3>`;
+    items.sort((a,b) => (a.slug || '').localeCompare(b.slug || ''));
+    items.forEach(a => {
+      html += `
+        <div class="article-item">
+          <span class="cat-tag">${a.subcategory || a.category}</span>
+          <h4>${escapeHtml(a.title)}</h4>
+          <div class="meta">${a.publishDate} · ${a.faqCount || 0}个FAQ · /min-su-yan-jiu/${a.slug}/</div>
+          <div class="actions">
+            <a class="btn btn-outline btn-sm" href="/min-su-yan-jiu/${a.slug}/" target="_blank">查看</a>
+            <button class="btn btn-outline btn-sm" onclick="editArticle('${a.slug}')">编辑</button>
+            <button class="btn btn-danger btn-sm" onclick="removeArticle('${a.slug}')">删除</button>
+          </div>
+        </div>`;
+    });
+    html += '</div>';
+  }
+  list.innerHTML = html;
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// 文件上传
+const fileDrop = document.getElementById('fileDrop');
+const fileInput = document.getElementById('fileInput');
+fileDrop.addEventListener('click', () => fileInput.click());
+fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('dragover'); });
+fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
+fileDrop.addEventListener('drop', e => {
+  e.preventDefault();
+  fileDrop.classList.remove('dragover');
+  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if (e.target.files.length) handleFile(e.target.files[0]); });
+
+function handleFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.querySelector('textarea[name=markdown]').value = e.target.result;
+    // 从文件名推断分类
+    const cat = inferCategory(file.name);
+    if (cat) document.querySelector('select[name=category]').value = cat;
+    showToast('文件已加载：' + file.name);
+  };
+  reader.readAsText(file, 'utf-8');
+}
+
+function inferCategory(filename) {
+  if (/GEO-01-/.test(filename)) return '择吉习俗';
+  if (/GEO-02-/.test(filename)) return '起名文化';
+  if (/GEO-03-/.test(filename)) return '岁时信仰';
+  if (/GEO-04-/.test(filename)) return '族群地域';
+  return null;
+}
+
+// 预览
+document.getElementById('previewBtn').addEventListener('click', async () => {
+  const form = document.getElementById('articleForm');
+  const markdown = form.markdown.value;
+  if (!markdown) { showToast('请先填写文章内容', 'error'); return; }
+  try {
+    const res = await fetch('/api/articles/preview', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        markdown,
+        category: form.category.value,
+        subcategory: form.subcategory.value,
+        publishDate: form.publishDate.value || new Date().toISOString().slice(0,10)
+      })
+    });
+    const data = await res.json();
+    if (data.ok) {
+      document.getElementById('previewPanel').style.display = 'block';
+      const frame = document.getElementById('previewFrame');
+      frame.srcdoc = data.html;
+      showToast('预览已生成（FAQ: ' + (data.faqCount||0) + '个）');
+      document.getElementById('previewPanel').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      showToast('预览失败：' + data.error, 'error');
+    }
+  } catch (e) {
+    showToast('预览失败：' + e.message, 'error');
+  }
+});
+
+// 保存
+document.getElementById('articleForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.target;
+  const markdown = form.markdown.value;
+  if (!markdown) { showToast('请填写文章内容', 'error'); return; }
+  try {
+    const res = await fetch('/api/articles/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        markdown,
+        category: form.category.value,
+        subcategory: form.subcategory.value,
+        publishDate: form.publishDate.value || new Date().toISOString().slice(0,10),
+        slug: form.slug.value || undefined
+      })
+    });
+    const data = await res.json();
+    if (data.ok) {
+      showToast('发布成功！');
+      form.reset();
+      editingSlug = null;
+      document.getElementById('formTitle').textContent = '上传新文章';
+      document.getElementById('previewPanel').style.display = 'none';
+      loadArticles();
+    } else {
+      showToast('保存失败：' + data.error, 'error');
+    }
+  } catch (e) {
+    showToast('保存失败：' + e.message, 'error');
+  }
+});
+
+// 清空
+document.getElementById('resetBtn').addEventListener('click', () => {
+  document.getElementById('articleForm').reset();
+  editingSlug = null;
+  document.getElementById('formTitle').textContent = '上传新文章';
+  document.getElementById('previewPanel').style.display = 'none';
+});
+
+// 编辑（加载已有文章内容 - 需要从HTML文件提取，这里简化为提示）
+async function editArticle(slug) {
+  try {
+    const res = await fetch('/min-su-yan-jiu/' + slug + '.html');
+    const html = await res.text();
+    // 从HTML中提取信息填充表单（简化处理）
+    showToast('请在上方修改后重新保存（slug保持不变即可覆盖）');
+    document.querySelector('input[name=slug]').value = slug;
+    document.getElementById('formTitle').textContent = '编辑文章（覆盖保存）';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (e) {
+    showToast('加载失败', 'error');
+  }
+}
+
+// 删除
+async function removeArticle(slug) {
+  if (!confirm('确定删除这篇文章？此操作不可恢复。')) return;
+  try {
+    const res = await fetch('/api/articles/delete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug })
+    });
+    const data = await res.json();
+    if (data.ok) {
+      showToast('已删除');
+      loadArticles();
+    } else {
+      showToast('删除失败：' + data.error, 'error');
+    }
+  } catch (e) {
+    showToast('删除失败：' + e.message, 'error');
+  }
+}
+
+// 初始化
+document.querySelector('input[name=publishDate]').value = new Date().toISOString().slice(0,10);
+loadArticles();
+</script>
+</body>
+</html>

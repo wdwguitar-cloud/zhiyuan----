@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内容中心｜商业开工顾问</title>
+<meta name="description" content="本地维护二维码、老师照片、案例图片、PDF资料与文字设置。">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">开工顾问</a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="about.html">老师介绍</a>
+      <a href="download-center.html">资料领取</a>
+      <a href="admin.html">线索后台</a>
+      <a href="content-center.html" class="active">内容中心</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline btn-small" href="admin.html">返回后台</a>
+      <a class="btn btn-gold btn-small" href="index.html">查看前台</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container page-hero">
+      <div>
+        <div class="eyebrow">本机维护入口</div>
+        <h1>内容中心</h1>
+        <p class="sub">以后换二维码、老师照片、案例图、PDF资料和联系方式，都在这里完成。上传后先预览，再决定是否启用。</p>
+      </div>
+      <div class="panel">
+        <h3>目录位置</h3>
+        <p><span class="file-path">content-hub</span> 只新增这一处，不会把素材散到工程各处。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>当前启用概览</h2>
+        <p id="contentCenterStatus">正在读取内容中心状态...</p>
+      </div>
+      <div class="content-center-summary" id="contentCenterSummary"></div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-title">
+        <h2>二维码</h2>
+        <p>上传新的微信二维码，再决定是否切换为当前使用版本。页面会自动完整居中显示，不再裁切铺满。</p>
+      </div>
+      <div class="content-center-grid">
+        <div class="panel">
+          <h3>上传新二维码</h3>
+          <form class="content-upload-form" data-kind="qr">
+            <input type="file" name="file" accept=".jpg,.jpeg,.png,.webp,.gif,.svg" required>
+            <button class="btn btn-gold" type="submit">上传二维码</button>
+          </form>
+          <div class="content-current" id="qrCurrentCard"></div>
+        </div>
+        <div class="panel">
+          <h3>二维码素材库</h3>
+          <div class="content-library" id="qrLibrary"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>老师照片</h2>
+        <p>仅用于老师介绍页主图展示，首页不会同步显示老师照片。</p>
+      </div>
+      <div class="content-center-grid">
+        <div class="panel">
+          <h3>上传老师照片</h3>
+          <form class="content-upload-form" data-kind="teacher">
+            <input type="file" name="file" accept=".jpg,.jpeg,.png,.webp,.gif,.svg" required>
+            <button class="btn btn-gold" type="submit">上传照片</button>
+          </form>
+          <div class="content-current" id="teacherCurrentCard"></div>
+        </div>
+        <div class="panel">
+          <h3>老师照片素材库</h3>
+          <div class="content-library" id="teacherLibrary"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-title">
+        <h2>案例图片</h2>
+        <p>一套图片库，对应设置到厂房、门店、办公室三个案例位。</p>
+      </div>
+      <div class="content-center-grid">
+        <div class="panel">
+          <h3>上传案例图片</h3>
+          <form class="content-upload-form" data-kind="case">
+            <input type="file" name="file" accept=".jpg,.jpeg,.png,.webp,.gif,.svg" required>
+            <button class="btn btn-gold" type="submit">上传案例图片</button>
+          </form>
+          <div class="content-slot-grid" id="caseSlots"></div>
+        </div>
+        <div class="panel">
+          <h3>案例图片素材库</h3>
+          <div class="content-library" id="caseLibrary"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>PDF资料</h2>
+        <p>上传到资料库后，再绑定到具体的下载位。</p>
+      </div>
+      <div class="content-center-grid">
+        <div class="panel">
+          <h3>上传PDF</h3>
+          <form class="content-upload-form" data-kind="pdf">
+            <input type="file" name="file" accept=".pdf" required>
+            <button class="btn btn-gold" type="submit">上传PDF</button>
+          </form>
+          <div class="content-slot-grid" id="pdfSlots"></div>
+        </div>
+        <div class="panel">
+          <h3>PDF资料库</h3>
+          <div class="content-library" id="pdfLibrary"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-title">
+        <h2>文字设置</h2>
+        <p>改完保存即可，前台会读取最新配置。</p>
+      </div>
+      <div class="content-center-grid">
+        <div class="panel">
+          <h3>联系方式</h3>
+          <form id="contactSettingsForm" class="content-text-form">
+            <label><span>页脚联系文案</span><input name="footerLine" required></label>
+            <label><span>微信号</span><input name="wechatId"></label>
+            <label><span>手机号</span><input name="phone"></label>
+            <label><span>二维码下方说明</span><input name="qrCaption"></label>
+            <label><span>联系备注</span><textarea name="note" rows="4"></textarea></label>
+            <button class="btn btn-gold" type="submit">保存联系方式</button>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>老师介绍</h3>
+          <form id="teacherSettingsForm" class="content-text-form">
+            <label><span>老师展示名称</span><input name="displayName"></label>
+            <label><span>老师页主标题</span><input name="heroTitle" required></label>
+            <label><span>老师页主介绍</span><textarea name="heroIntro" rows="5"></textarea></label>
+            <label><span>简要说明</span><textarea name="summary" rows="3"></textarea></label>
+            <label><span>服务说明</span><textarea name="serviceNote" rows="4"></textarea></label>
+            <button class="btn btn-gold" type="submit">保存老师介绍</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><a class="brand" href="index.html">开工顾问</a><p>老师一对一咨询｜微信预约</p></div>
+    <div><h4>本地维护</h4><a href="content-center.html">内容中心</a><a href="admin.html">线索后台</a><a href="about.html">老师介绍</a><a href="download-center.html">资料领取</a></div>
+    <div><h4>当前目标</h4><a href="index.html">前台首页</a><a href="cases.html">案例中心</a><a href="guide-center.html">资料中心</a><a href="pricing.html">价格说明</a></div>
+    <div><h4>内容目录</h4><span class="file-path">content-hub/qr-images</span><span class="file-path">content-hub/teacher-images</span><span class="file-path">content-hub/case-images</span><span class="file-path">content-hub/pdf-library</span></div>
+    <div><div class="qr">微信<br>二维码</div><p>请替换真实二维码</p></div>
+  </div>
+  <div class="container copy">© 商业开工顾问内容中心</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="./config.js"></script>
+<script src="./script-templates.js"></script>
+<script src="./script.js"></script>
+<script src="./content-center.js"></script>
+</body>
+</html>

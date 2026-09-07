@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="1400" height="900" fill="#f4f8fc"/>
+<text x="80" y="78" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#0b2547" font-weight="900">案例图替换规则</text>
+<text x="80" y="118" font-size="22" font-family="Arial, PingFang SC, Microsoft YaHei" fill="#65758a">先把真实照片按文件名放进 assets/cases/，再替换页面里的图片路径。</text>
+<rect x="80" y="165" width="1240" height="600" rx="24" fill="#fff" stroke="#d9e1ec"/>
+<g font-family="Arial, PingFang SC, Microsoft YaHei">
+<rect x="130" y="220" width="330" height="180" rx="18" fill="#0b2547"/><text x="165" y="285" font-size="28" fill="#fff" font-weight="900">首页案例卡片图</text><text x="165" y="330" font-size="22" fill="#e6bd72">换成：案例封面图</text><text x="165" y="365" font-size="18" fill="#eaf1f8">建议文件：factory-cover.jpg</text>
+<rect x="670" y="220" width="560" height="180" rx="18" fill="#f7fbff" stroke="#d9e1ec"/><text x="705" y="278" font-size="28" fill="#0b2547" font-weight="900">案例详情页首图</text><text x="705" y="325" font-size="22" fill="#4d5c71">同一张图继续作为详情页 Hero 图</text><text x="705" y="360" font-size="18" fill="#7a8798">用途：让客户知道这是同一个项目</text>
+<rect x="130" y="465" width="330" height="180" rx="18" fill="#fff7e7" stroke="#e6bd72"/><text x="165" y="530" font-size="28" fill="#7f5b1b" font-weight="900">详情页内容区</text><text x="165" y="575" font-size="22" fill="#4d5c71">可加入 2-4 张过程图</text><text x="165" y="610" font-size="18" fill="#7a8798">现场 / 物料 / 交付文件</text>
+<rect x="670" y="465" width="560" height="180" rx="18" fill="#f7fbff" stroke="#d9e1ec"/><text x="705" y="523" font-size="28" fill="#0b2547" font-weight="900">交付样张页</text><text x="705" y="570" font-size="22" fill="#4d5c71">不要放客户隐私，用打码文件样张</text><text x="705" y="605" font-size="18" fill="#7a8798">用途：展示你交付的清晰度</text>
+</g>
+<path d="M490 310h140" stroke="#c89135" stroke-width="6"/><path d="M620 300l18 10-18 10z" fill="#c89135"/>
+<path d="M490 555h140" stroke="#c89135" stroke-width="6"/><path d="M620 545l18 10-18 10z" fill="#c89135"/>
+</svg>

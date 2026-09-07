@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>后台登录｜商业开工顾问</title><meta name="description" content="保存后台密钥到本机浏览器，用于访问线索后台。"><link rel="stylesheet" href="./styles.css"></head><body><header><div class="container header-inner"><a class="brand" href="index.html">开工顾问</a><nav><a href="index.html">首页</a><a href="pricing.html">产品价格</a><a href="growth-hub.html">扩流入口</a><a href="city-pages.html">城市页面</a><a href="partner.html">合作渠道</a><a href="download-center.html">资料领取</a><a href="admin.html">后台</a></nav><div class="header-actions"><a class="btn btn-outline btn-small" href="launch-checklist.html">上线清单</a><a class="btn btn-gold btn-small" href="/guide-form#lead-form">立即咨询</a></div></div></header>
+<main>
+<section class="hero"><div class="container page-hero"><div><div class="eyebrow">后台登录</div><h1>输入后台密钥，进入线索管理</h1><p class="sub">本页会把后台密钥保存到当前浏览器 localStorage。正式上线后请在 backend/.env 里设置同一个 ADMIN_TOKEN。</p><div class="actions"><a class="btn btn-outline" href="launch-checklist.html">查看上线清单</a></div></div><div class="panel"><h3>本地测试说明</h3><p>如果你只在本机 localhost 测试，没有设置 ADMIN_TOKEN，后台仍可访问。正式上线必须设置密钥。</p></div></div></section>
+<section class="section"><div class="container"><div class="doc-preview"><h2>后台密钥</h2><p>输入你的 ADMIN_TOKEN：</p><input id="adminToken" placeholder="输入后台密钥" style="min-height:46px;width:100%;border:1px solid #c8d4e0;border-radius:10px;padding:0 12px;"><div class="actions" style="margin-top:16px;"><button class="btn btn-gold" id="saveAdminToken">保存密钥到本机</button><a class="btn btn-outline" href="admin.html">进入后台</a></div></div></div></section>
+</main>
+<footer>
+<div class="container footer-grid">
+<div><a class="brand" href="index.html">开工顾问</a><p>老师一对一咨询｜微信预约</p></div>
+<div><h4>成交与交付</h4><a href="pricing.html">产品价格</a><a href="delivery-templates.html">交付模板</a><a href="service-agreement.html">服务协议</a><a href="client-intake.html">资料收集</a></div>
+<div><h4>扩流系统</h4><a href="growth-hub.html">扩流入口</a><a href="city-pages.html">城市页面</a><a href="partner.html">合作渠道</a><a href="download-center.html">资料领取</a></div>
+<div><h4>运营后台</h4><a href="admin-login.html">后台登录</a><a href="admin.html">线索管理</a><a href="launch-checklist.html">上线清单</a><a href="scripts-library.html">话术库</a></div>
+<div><div class="qr">微信<br>二维码</div><p>请替换真实二维码</p></div>
+</div>
+<div class="container copy">© 商业开工顾问示意网站 V11 ｜正式上线与扩流系统</div>
+</footer><a class="float-btn" href="/guide-form#lead-form">立即咨询</a><div class="toast" id="toast"></div><script src="./config.js"></script><script src="./script-templates.js"></script><script src="./script.js"></script></body></html>

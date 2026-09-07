@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>渠道链接生成器｜商业开工顾问</title><meta name="description" content="生成带utm和channel来源追踪的推广链接。"><link rel="stylesheet" href="./styles.css"></head><body><header><div class="container header-inner"><a class="brand" href="index.html">开工顾问</a><nav><a href="index.html">首页</a><a href="self-check.html">自检器</a><a href="interactive-checklists.html">检查表</a><a href="product-matrix.html">产品矩阵</a><a href="annual-consultant.html">年度顾问</a><a href="partner-exclusive.html">合作专属页</a><a href="traffic-hub.html">流量引擎</a><a href="admin.html">后台</a></nav><div class="header-actions"><a class="btn btn-outline btn-small" href="keyword-map.html">关键词地图</a><a class="btn btn-gold btn-small" href="/guide-form#lead-form">立即咨询</a></div></div></header>
+<main>
+<section class="hero"><div class="container page-hero"><div><div class="eyebrow">V12 · 渠道链接</div><h1>每个合作人、平台、二维码都用不同链接</h1><p class="sub">否则你只能知道“有人咨询”，不知道到底是朋友圈、合作方、短视频、城市页还是资料包带来的客户。</p></div><div class="panel"><h3>后台会记录</h3><p>utm_source、utm_campaign、channel、landingPage 和 pageViewPath 都会进入线索和 CSV。</p></div></div></section>
+<section class="section"><div class="container"><div class="link-builder"><h2>生成追踪链接</h2>
+<label>正式域名<input id="lb-domain" value="https://你的域名.com"></label>
+<label>落地页面<select id="lb-page"><option value="/guide-form#lead-form">首页表单</option><option value="download-center.html">资料领取页</option><option value="partner.html">合作页</option><option value="pricing.html">价格页</option><option value="city-pages.html">城市页面矩阵</option></select></label>
+<label>平台来源 utm_source<input id="lb-source" value="wechat"></label>
+<label>活动名称 utm_campaign<input id="lb-campaign" value="factory_start"></label>
+<label>渠道编号 channel<input id="lb-channel" value="partner_gongzhuang_001"></label>
+<div class="link-result" id="lb-result"></div><div class="actions"><button id="lb-copy" class="btn btn-gold">复制链接</button><a class="btn btn-outline" href="admin.html">去后台看来源</a></div></div></div></section>
+</main>
+<footer>
+<div class="container footer-grid">
+<div><a class="brand" href="index.html">开工顾问</a><p>老师一对一咨询｜微信预约</p></div>
+<div><h4>流量增长</h4><a href="traffic-hub.html">流量引擎</a><a href="keyword-map.html">关键词地图</a><a href="content-calendar.html">内容日历</a><a href="social-content-library.html">内容库</a></div>
+<div><h4>转化系统</h4><a href="pricing.html">产品价格</a><a href="download-center.html">资料领取</a><a href="partner.html">合作渠道</a><a href="channel-link-builder.html">渠道链接</a></div>
+<div><h4>交付运营</h4><a href="delivery-templates.html">交付模板</a><a href="service-agreement.html">服务协议</a><a href="admin.html">线索后台</a><a href="launch-checklist.html">上线清单</a></div>
+<div><div class="qr">微信<br>二维码</div><p>请替换真实二维码</p></div>
+</div>
+<div class="container copy">© 商业开工顾问示意网站 V13 ｜工具化引流与产品矩阵</div>
+</footer><a class="float-btn" href="/guide-form#lead-form">立即咨询</a><div class="toast" id="toast"></div><script src="./config.js"></script><script src="./script-templates.js"></script><script src="./script.js"></script>
+<script>
+(function(){
+  function build(){
+    const domain = document.getElementById('lb-domain').value.trim() || 'https://你的域名.com';
+    const page = document.getElementById('lb-page').value;
+    const source = document.getElementById('lb-source').value.trim();
+    const campaign = document.getElementById('lb-campaign').value.trim();
+    const channel = document.getElementById('lb-channel').value.trim();
+    const url = new URL(domain.replace(/\/$/,'') + '/' + page);
+    if(source) url.searchParams.set('utm_source', source);
+    if(campaign) url.searchParams.set('utm_campaign', campaign);
+    if(channel) url.searchParams.set('channel', channel);
+    document.getElementById('lb-result').textContent = url.toString();
+  }
+  ['lb-domain','lb-page','lb-source','lb-campaign','lb-channel'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.addEventListener('input', build);
+    if(el) el.addEventListener('change', build);
+  });
+  const copy=document.getElementById('lb-copy');
+  if(copy) copy.addEventListener('click',()=>navigator.clipboard.writeText(document.getElementById('lb-result').textContent));
+  build();
+})();
+</script>
+</body></html>

@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables (contains secrets)
+.env
+**/.env
+
+# Logs
+logs/
+**/logs/
+*.log
+npm-debug.log*
+
+# Data (user leads, runtime data)
+backend/data/
+**/data/
+
+# Build artifacts (can be rebuilt)
+# 注意：dist是构建产物，但上线版需要保留已构建好的dist，所以不忽略
+# app-frontend/dist/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+**/*.bak
