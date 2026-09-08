@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8DCC8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow3" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#5A3A1F" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8B4513"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="900" height="700" fill="url(#bgGrad3)"/>
+
+  <!-- 标题 -->
+  <text x="450" y="50" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="28" fill="#2A190D" font-weight="bold">环境塑造身体</text>
+  <text x="450" y="80" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="14" fill="#7A6B5D">八排瑶身体训练的完整逻辑链条——体质特征不是天生的，而是训练出来的</text>
+
+  <!-- 步骤1：自然环境 -->
+  <g filter="url(#shadow3)">
+    <rect x="250" y="110" width="400" height="75" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="450" y="138" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#2A190D" font-weight="bold">① 自然环境</text>
+    <text x="450" y="163" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">高山地形 · 道路崎岖 · 昼夜温差大 · 耕地有限</text>
+  </g>
+
+  <line x1="450" y1="185" x2="450" y2="215" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead3)"/>
+
+  <!-- 步骤2：生计方式 -->
+  <g filter="url(#shadow3)">
+    <rect x="250" y="215" width="400" height="75" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="450" y="243" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#2A190D" font-weight="bold">② 生计方式</text>
+    <text x="450" y="268" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">狩猎为主 · 采集为辅 · 少量农耕 · 频繁山地移动</text>
+  </g>
+
+  <line x1="450" y1="290" x2="450" y2="320" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead3)"/>
+
+  <!-- 步骤3：身体要求 -->
+  <g filter="url(#shadow3)">
+    <rect x="250" y="320" width="400" height="75" rx="8" fill="#F0E6D6" stroke="#8B4513" stroke-width="2"/>
+    <text x="450" y="348" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#8B4513" font-weight="bold">③ 身体要求</text>
+    <text x="450" y="373" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">脚部耐磨 · 善于登山 · 耐寒暑 · 精于狩猎工具</text>
+  </g>
+
+  <line x1="450" y1="395" x2="450" y2="425" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead3)"/>
+
+  <!-- 步骤4：身体训练（分两列） -->
+  <g filter="url(#shadow3)">
+    <rect x="100" y="425" width="340" height="120" rx="8" fill="#FFFFFF" stroke="#8B3A3A" stroke-width="2"/>
+    <text x="270" y="453" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="17" fill="#8B3A3A" font-weight="bold">④ 身体训练（残酷但有效）</text>
+    <text x="270" y="480" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">烙脚跟：烧铁石烙儿童脚跟，人工增厚皮肤</text>
+    <text x="270" y="502" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">长齿木屐：穿长齿木屐在石碛上旋转训练</text>
+    <text x="270" y="524" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">日常登山：日十数回登山，训练体能</text>
+    <text x="270" y="546" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">狩猎实践：从小参与狩猎，掌握技能</text>
+  </g>
+
+  <!-- 右侧：训练方法图示 -->
+  <g filter="url(#shadow3)">
+    <rect x="480" y="425" width="320" height="120" rx="8" fill="#2A190D" stroke="#8B4513" stroke-width="2"/>
+    <text x="640" y="455" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#E8DCC8" font-weight="bold">旧志原文</text>
+    <text x="640" y="485" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#C4B59E">"儿始能行，烧铁石烙其跟"</text>
+    <text x="640" y="510" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#C4B59E">"令儿童着长齿木屐，旋转石碛上"</text>
+    <text x="640" y="535" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#C4B59E">"日十数回登山，健如猿猱"</text>
+  </g>
+
+  <line x1="450" y1="545" x2="450" y2="575" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead3)"/>
+
+  <!-- 步骤5：体质特征 -->
+  <g filter="url(#shadow3)">
+    <rect x="150" y="575" width="600" height="75" rx="8" fill="#F0E6D6" stroke="#8B4513" stroke-width="2"/>
+    <text x="450" y="603" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#8B4513" font-weight="bold">⑤ 体质特征（训练的结果）</text>
+    <text x="450" y="630" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="13" fill="#5A3A1F">耐寒暑 · 善走险 · 精药弩 · 惯捕猎 —— "平民莫能及，而瑶人亦颇以此自恃"</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="450" y="680" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#7A6B5D">知远风物志 · 基于《连阳八排风土记》卷三史料 · 岭南民俗文化研究</text>
+</svg>

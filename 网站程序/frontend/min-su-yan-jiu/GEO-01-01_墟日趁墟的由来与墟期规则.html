@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>墟日为什么是一四七二五八三六九？岭南趁墟的由来与墟期规则 | 知远风物志</title>
+<meta name="description" content="墟日（圩日）是岭南传统乡村集市制度，常见墟期为一四七、二五八、三六九。墟期不是官府规定，而是相邻墟市网络自发协调形成的商业时间制度。本文基于始兴、封川、潮州三县地方志，考证墟期由来与规则。">
+<meta name="keywords" content="墟日,圩日,趁墟,赶墟,一四七二五八三六九,墟期,岭南集市,地方志">
+
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "墟日和圩日有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "墟日和圩日是同一个概念的不同写法。广东多称'墟'，广西多称'圩'，二者同源异写，都是指岭南地区传统的乡村定期集市。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么墟日是一四七二五八三六九？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "墟期设定为一四七、二五八、三六九，核心逻辑是相邻墟市错开墟期，形成区域市场网络。三个组合之间基本不重叠，乡民可以在不同日子到不同墟市交易。这是民间长期自发协调的结果，不是官府规定。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "现在还有墟日吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。墟日制度在岭南乡村仍然延续。湛江坡头龙头镇以农历初二、初五、初八为墟日，桂林临桂是'天天圩'，佛山三水白坭岗头墟是新历尾数逢三六九开市。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "广东和广西的墟日一样吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基本逻辑一致，都是定期集市制度，但具体墟期组合和称呼有所不同。广东多称'墟'，广西多称'圩'。本文所见材料主要为广东县志，广西侧的具体记载待补。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "趁墟是什么意思？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "趁墟是岭南方言，意思是'去集市交易'。'趁'是'赶、赴'的意思。北方称'赶集'，岭南称'趁墟'。趁墟不仅是买东西，也是社交、信息传递的机会。"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "墟日为什么是一四七二五八三六九？岭南趁墟的由来与墟期规则",
+  "description": "基于始兴、封川、潮州三县地方志，考证岭南墟期制度的由来与规则。",
+  "author": {"@type": "Organization", "name": "知远风物志"},
+  "publisher": {"@type": "Organization", "name": "知远风物志"},
+  "datePublished": "2026-09-07",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": ""}
+}
+</script>
+
+<style>
+:root {
+  --color-primary: #5A3A1F;
+  --color-dark: #2A190D;
+  --color-bg: #F5F0E8;
+  --color-card: #FFFFFF;
+  --color-accent: #8B4513;
+  --color-text: #3D2B1F;
+  --color-text-light: #7A6B5D;
+  --color-border: #D4C5B0;
+  --color-highlight: #F0E6D6;
+  --font-title: "STKaiti", "KaiTi", "Noto Serif SC", serif;
+  --font-body: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* 页眉导航 */
+header {
+  background: var(--color-dark);
+  border-bottom: 3px solid var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 22px;
+  color: #E8DCC8;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.logo span { color: var(--color-accent); }
+
+nav { display: flex; gap: 20px; }
+
+nav a {
+  color: #C4B59E;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: #E8DCC8; }
+
+/* 文章头图区 */
+.hero {
+  background: linear-gradient(135deg, rgba(42,25,13,0.88) 0%, rgba(90,58,31,0.82) 100%), url('images/hero-xuri.jpg') center/cover no-repeat;
+  padding: 80px 20px 70px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.hero-category {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #D4C5B0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 30px;
+  color: #F5EDE0;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 16px;
+  position: relative;
+}
+
+.hero-meta {
+  color: #A89880;
+  font-size: 13px;
+  position: relative;
+}
+
+.hero-meta span { margin: 0 8px; }
+
+/* 正文容器 */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* 概述卡片 */
+.overview-card {
+  background: var(--color-card);
+  border-left: 4px solid var(--color-accent);
+  padding: 24px 28px;
+  margin-bottom: 40px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 12px rgba(90,58,31,0.08);
+}
+
+.overview-card p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+/* 章节标题 */
+h2 {
+  font-family: var(--font-title);
+  font-size: 22px;
+  color: var(--color-dark);
+  margin: 44px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+h3 {
+  font-family: var(--font-title);
+  font-size: 18px;
+  color: var(--color-primary);
+  margin: 28px 0 12px;
+}
+
+/* 正文段落 */
+p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+strong { color: var(--color-dark); }
+
+/* 表格 */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(90,58,31,0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-card);
+  font-size: 14px;
+}
+
+th {
+  background: var(--color-primary);
+  color: #F5EDE0;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: normal;
+  font-family: var(--font-title);
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:nth-child(even) { background: var(--color-highlight); }
+
+/* 列表 */
+ol, ul {
+  margin: 12px 0 16px 24px;
+}
+
+li { margin-bottom: 8px; }
+
+/* 误区纠正 */
+.misconception {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+}
+
+.misconception .wrong {
+  color: #8B3A3A;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.misconception .correct {
+  color: var(--color-text);
+}
+
+/* 现代意义高亮 */
+.insight-box {
+  background: linear-gradient(135deg, var(--color-highlight) 0%, #E8DCC8 100%);
+  border-left: 4px solid var(--color-accent);
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.insight-box .insight-title {
+  font-family: var(--font-title);
+  color: var(--color-accent);
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* FAQ折叠 */
+.faq-section { margin-top: 40px; }
+
+.faq-item {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 16px 22px;
+  cursor: pointer;
+  font-family: var(--font-title);
+  font-size: 16px;
+  color: var(--color-dark);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.faq-item summary:hover { background: var(--color-highlight); }
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 20px;
+  color: var(--color-accent);
+  transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item .faq-answer {
+  padding: 0 22px 18px;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* 参考资料 */
+.references {
+  margin-top: 40px;
+  padding: 24px;
+  background: var(--color-highlight);
+  border-radius: 8px;
+}
+
+.references h3 {
+  margin-top: 0;
+  color: var(--color-dark);
+}
+
+.references ol {
+  margin-left: 20px;
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+
+.references li { margin-bottom: 10px; }
+
+/* 相关文章 */
+.related-section {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid var(--color-border);
+}
+
+.related-section h2 { border: none; padding: 0; margin-bottom: 20px; }
+.related-section h2::after { display: none; }
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.related-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 18px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.related-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(90,58,31,0.12);
+}
+
+.related-card .rc-cat {
+  font-size: 12px;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.related-card .rc-title {
+  font-family: var(--font-title);
+  font-size: 15px;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+
+/* 页脚 */
+footer {
+  background: var(--color-dark);
+  color: #8A7B68;
+  padding: 36px 20px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer .footer-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+footer .disclaimer {
+  margin-bottom: 12px;
+  padding: 14px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  text-align: left;
+}
+
+footer a { color: #A89880; }
+
+/* 响应式 */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 22px; }
+  .header-inner { flex-direction: column; gap: 10px; }
+  nav { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  h2 { font-size: 19px; }
+  .container { padding: 24px 16px 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 页眉 -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">知远<span>风物志</span></a>
+    <nav>
+      <a href="#">首页</a>
+      <a href="#">择吉习俗</a>
+      <a href="#">岁时信仰</a>
+      <a href="#">族群地域</a>
+      <a href="#">关于</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 文章头图区 -->
+<div class="hero">
+  <div class="hero-category">择吉习俗 · GEO-01</div>
+  <h1>墟日为什么是一四七二五八三六九？<br>岭南趁墟的由来与墟期规则</h1>
+  <div class="hero-meta">
+    <span>知远风物志</span>·<span>2026-09-07</span>·<span>约15分钟阅读</span>
+  </div>
+</div>
+
+<!-- 正文 -->
+<div class="container">
+
+  <!-- 概述 -->
+  <div class="overview-card">
+    <p>墟日（圩日）是岭南地区传统的乡村集市制度，常见的墟期组合是一四七、二五八、三六九，即每月农历日期尾数逢这些数字开市。墟期不是官府规定的，也不是挑吉日选出来的，而是相邻墟市网络自发协调形成的约定性商业时间制度。</p>
+  </div>
+
+  <!-- 二、概念分层 -->
+  <h2>一、概念分层</h2>
+  <p>讨论"墟日"，必须先区分五个层次，避免概念混杂：</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>概念</th><th>性质</th><th>说明</th><th>本文是否讨论</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>墟/圩</td><td>乡村集市的名称</td><td>广东多称"墟"，广西多称"圩"，同源异写</td><td>是，基础概念</td></tr>
+        <tr><td>墟日/圩日</td><td>集市开市的日子</td><td>每月固定日期开市，如逢一四七</td><td>是，核心讨论对象</td></tr>
+        <tr><td>墟期</td><td>集市开市的周期规则</td><td>一四七、二五八、三六九等组合</td><td>是，核心讨论对象</td></tr>
+        <tr><td>趁墟/赶墟</td><td>去集市交易的行为</td><td>乡民携带物产到墟市交易</td><td>是，作为习俗的一面</td></tr>
+        <tr><td>常市/逐日市</td><td>每天都开市的集市</td><td>与定期墟市相对，如县城南门市</td><td>是，作为对比</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>本文讨论墟期制度的形成逻辑、墟期组合的类型、墟市网络的运作，以及趁墟习俗的历史由来。本文不讨论商铺开张的择吉仪式（那是另一套系统），也不讨论当代电商物流对墟市的冲击。</p>
+
+  <!-- 三、历史渊源 -->
+  <h2>二、历史渊源</h2>
+  <p>墟市制度的源头可追溯至中国古代的"草市"——在州县城外、交通要道旁自发形成的定期集市。但本文所见地方志材料主要为清至民国时期的记录，更早的唐宋时期墟市在两广的具体形态，现有材料不足以支撑结论，因此不做"起源于唐宋"的判断。</p>
+
+  <p>明清时期，墟市已成为岭南乡村商业的核心形态。《始兴县志》卷六《建置略·墟市》详细记载了该县各墟的墟期，说明至迟到清代，墟期制度已经高度成熟和标准化。</p>
+
+  <p>从制度演变看，墟期的形成不是自上而下的行政命令，而是自下而上的市场自发协调。相邻墟市通过错开墟期，形成覆盖区域的市场网络，使乡民可以在不同日子到不同墟市交易，最大化商业效率。这种自发秩序的形成，是岭南乡村商业活力的重要体现。</p>
+
+  <p>民国以后，随着现代商业体系的建立和交通的改善，部分墟市逐步衰落或转为常市。但在广大乡村地区，墟日制度仍然延续，甚至在近年来出现了"趁墟热"——年轻人把赶墟当作体验乡土文化的方式。</p>
+
+  <!-- 四、地域差异 -->
+  <h2>三、地域差异</h2>
+  <p>本文所见三县材料，墟期制度的基本逻辑一致，但在墟期组合的多样性和常市比例上存在差异。以下为对比表：</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>县志</th><th>墟市名称</th><th>墟期</th><th>类型</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>《始兴县志》卷六</td><td>太平墟</td><td>三六九期集</td><td>定期墟</td></tr>
+        <tr><td>《始兴县志》卷六</td><td>沈所墟</td><td>一五八期集</td><td>定期墟</td></tr>
+        <tr><td>《始兴县志》卷六</td><td>颉冈墟</td><td>一四八期集</td><td>定期墟</td></tr>
+        <tr><td>《始兴县志》卷六</td><td>都亨墟</td><td>三六十期集</td><td>定期墟</td></tr>
+        <tr><td>《封川县志》</td><td>南门市</td><td>常市（每日开市）</td><td>常市</td></tr>
+        <tr><td>《封川县志》</td><td>渔涝墟</td><td>一四七日</td><td>定期墟</td></tr>
+        <tr><td>《封川县志》</td><td>白云牛墟</td><td>三六日</td><td>定期墟</td></tr>
+        <tr><td>《封川县志》</td><td>白垢墟</td><td>六九日</td><td>定期墟</td></tr>
+        <tr><td>《封川县志》</td><td>凤村墟</td><td>一六日</td><td>定期墟</td></tr>
+        <tr><td>《潮州府志》</td><td>揭阳县各市</td><td>逐日市/定期市并存</td><td>混合型</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>从对比可见：</p>
+  <ol>
+    <li><strong>墟期组合多样</strong>：除了常见的一四七、二五八、三六九，还有一五八、一四八、三六十、一六、三六、六九等多种组合。墟期不是只有三种标准组合，而是根据当地实际情况灵活设定。</li>
+    <li><strong>常市与定期墟并存</strong>：封川县的南门市是常市（每日开市），而渔涝墟、白云牛墟等是定期墟。县城和交通要道多为常市，乡村地区多为定期墟。</li>
+    <li><strong>区域网络特征明显</strong>：始兴县一个县内就有四种不同墟期组合（三六九、一五八、一四八、三六十），相邻墟市的墟期错开，形成覆盖全县的市场网络。</li>
+  </ol>
+
+  <p>需要说明的是，本文所见材料主要为广东县志，广西侧墟期的具体记载待补。因此地域差异部分仅反映广东三县的情况，不代表整个两广地区。</p>
+
+  <!-- 五、传统做法 -->
+  <h2>四、传统做法</h2>
+  <p>根据三县志书的记载，墟期制度和趁墟习俗的完整图景可还原为以下几个方面：</p>
+
+  <h3>第一步：墟期的设定</h3>
+  <p>每个墟市根据自身的位置、辐射人口、物产特点，设定固定的墟期。墟期通常以农历日期的尾数为准，如"三六九期集"即每月农历初三、初六、初九、十三、十六、十九、二十三、二十六、二十九开市。</p>
+
+  <h3>第二步：相邻墟市的协调</h3>
+  <p>相邻墟市的墟期通常错开，使乡民可以在不同日子到不同墟市交易。如始兴县太平墟是三六九，沈所墟是一五八，颉冈墟是一四八——三个墟的墟期基本不重叠，乡民可以轮流赶墟。</p>
+
+  <h3>第三步：趁墟的流程</h3>
+  <p>墟日当天，周边乡民携带自家产的果蔬、土特产、手工艺品到墟市售卖，同时购买需要的日用品、农具、布料等。墟市不仅是商品交易场所，也是社交、信息传递、纠纷调解的公共空间。</p>
+
+  <h3>第四步：墟市的功能分化</h3>
+  <p>不同墟市有不同的专业特色。如封川县白云牛墟是"牛墟"，专门交易耕牛；始兴县太平墟是"全县商务总会之墟"，商家来自庐府、江西、福建、嘉应州等地，是综合性大墟。</p>
+
+  <p>以上图景为三县志书记载的综合还原，具体到某一墟市可能略有差异。</p>
+
+  <!-- 六、现代意义与常见误区 -->
+  <h2>五、现代意义与常见误区</h2>
+
+  <div class="misconception">
+    <div class="wrong">误区一：墟期是官府规定的。</div>
+    <div class="correct">纠正：旧志显示，墟期是民间长期自发形成的约定性制度，不是官府强制规定的。官府的角色主要是登记墟市位置、管理税收，而不是设定墟期。墟期的形成是市场自发协调的结果。</div>
+  </div>
+
+  <div class="misconception">
+    <div class="wrong">误区二：墟期只有一四七、二五八、三六九三种。</div>
+    <div class="correct">纠正：旧志显示，墟期组合非常多样，除了常见的三种，还有一五八、一四八、三六十、一六、三六、六九等多种组合。墟期是根据当地实际情况灵活设定的，不是标准化的三种组合。</div>
+  </div>
+
+  <div class="misconception">
+    <div class="wrong">误区三：墟期是"挑吉日"选出来的。</div>
+    <div class="correct">纠正：墟期与择吉是两套完全不同的系统。墟期是商业时间制度，基于市场网络的协调；择吉是基于历法和命理的时间选择。二者不能混为一谈。</div>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">现代意义：从墟期看民间自发秩序</div>
+    <p>墟期制度是民间自发秩序的典范——没有中央规划，没有行政命令，相邻墟市通过长期的市场博弈，自发形成了覆盖区域的时间网络。这种自发秩序的效率，甚至超过了许多人为规划的市场制度。</p>
+    <p>今天，墟日制度在岭南乡村仍然延续。湛江坡头的龙头镇以农历初二、初五、初八为墟日，桂林临桂的临桂镇是"天天圩"，佛山三水的白坭岗头墟是新历尾数逢三六九开市。这些延续至今的墟日，是几百年前民间自发秩序的活化石。</p>
+    <p>从更深层看，墟期的"时间表"逻辑与今天的电商配送周期、直播带货时段有共通之处——都是通过时间协调来最大化交易效率。几百年前的乡民，已经用最朴素的方式，解决了现代商业仍然在面对的时间协调问题。</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2>六、常见问题</h2>
+
+    <details class="faq-item">
+      <summary>墟日和圩日有什么区别？</summary>
+      <div class="faq-answer">
+        <p>墟日和圩日是同一个概念的不同写法。广东地区多称"墟"（如趁墟、墟市），广西地区多称"圩"（如赶圩、圩日）。二者同源异写，都是指岭南地区传统的乡村定期集市。"墟"字更强调集市的"虚空"属性——平时空无一人，墟日才聚集人群；"圩"字是后来的俗写。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>为什么墟日是一四七二五八三六九？</summary>
+      <div class="faq-answer">
+        <p>墟期设定为一四七、二五八、三六九，核心逻辑是相邻墟市错开墟期，形成区域市场网络。三个组合之间基本不重叠（一四七与二五八差一天，二五八与三六九差一天，一四七与三六九差两天），乡民可以在不同日子到不同墟市交易。这种设定是民间长期自发协调的结果，不是官府规定，也不是挑吉日。旧志还记载了一五八、一四八、三六十、一六等多种非标准组合，说明墟期是灵活设定的。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>现在还有墟日吗？</summary>
+      <div class="faq-answer">
+        <p>有。墟日制度在岭南乡村仍然延续，甚至近年来出现了"趁墟热"。湛江坡头的龙头镇以农历初二、初五、初八为墟日，桂林临桂的临桂镇是"天天圩"（每日开市），佛山三水的白坭岗头墟是新历尾数逢三六九开市，番禺沙湾墟是每月农历初三、初八、十三、十八、二十三、二十八开市。这些墟日不仅是商品交易场所，也成为年轻人体验乡土文化的方式。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>广东和广西的墟日一样吗？</summary>
+      <div class="faq-answer">
+        <p>基本逻辑一致，都是定期集市制度，但具体墟期组合和称呼有所不同。广东多称"墟"，广西多称"圩"。本文所见材料主要为广东县志（始兴、封川、潮州），广西侧的具体墟期记载待补。从现有信息看，广西桂林临桂的圩日表与广东墟期的逻辑一致，都是以日期尾数为周期的定期集市。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>趁墟是什么意思？</summary>
+      <div class="faq-answer">
+        <p>趁墟（也作"趁圩"）是岭南方言，意思是"去集市交易"。"趁"是"赶、赴"的意思，"趁墟"即赶赴墟日。北方称"赶集"，岭南称"趁墟"，二者是同一行为的地域差异。趁墟不仅是买东西，也是社交、信息传递、走亲访友的机会——墟日是乡村社会最重要的公共空间之一。</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- 参考资料 -->
+  <div class="references">
+    <h3>参考资料</h3>
+    <ol>
+      <li>《始兴县志》（民国十五年刊本，1926年）卷六《建置略·墟市》："太平墟在縣前今按此墟三六九期集商家除邑人外有廬府江西福建嘉應州人來比貿易為全縣商務總會之墟""沈所墟距縣十里在城西今按此墟一五八期集二六八等約鄉氏多趁此墟""都亨墟在縣東南九十里今按此墟在都亨約三六十期集江西度南縣人多販木來此售賣"</li>
+      <li>《封川县志》（清）："墟市。市一：南門市在太平橋十字街。墟九：漁澇墟在下總漁澇村，墟期一四七日；白雲牛墟原在遷瀝鼓岡，今遷漁澇，墟期三六日；白垢墟在外總河村，墟期六九日，俱文德鄉；鳳村墟，墟期一六日"</li>
+      <li>《潮州府志》（清）："揭陽縣大街市縣城內宣化新街市縣城內魁隆南市縣城內市魁新市縣城內市魁北市縣城內市魁南市縣城內市魁新埠市縣東門外東關外市逐日市北關外市逐日市"</li>
+    </ol>
+  </div>
+
+  <!-- 相关文章 -->
+  <div class="related-section">
+    <h2>相关阅读</h2>
+    <div class="related-grid">
+      <a href="GEO-01-02_庚帖合八字与送日子流程.html" class="related-card">
+        <div class="rc-cat">择吉习俗</div>
+        <div class="rc-title">庚帖是什么？传统婚礼合八字与送日子的完整流程</div>
+      </a>
+      <a href="GEO-01-04_立春打春牛的由来与仪式细节.html" class="related-card">
+        <div class="rc-cat">择吉习俗</div>
+        <div class="rc-title">立春为什么要打春牛？打春牛的由来与仪式细节</div>
+      </a>
+      <a href="GEO-03-02_中元节烧街衣与厉坛制度考.html" class="related-card">
+        <div class="rc-cat">岁时信仰</div>
+        <div class="rc-title">中元节为什么要烧街衣？厉坛与祭无祀鬼神的制度由来</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 传统民俗日期咨询服务 -->
+<div style="margin:40px 0;padding:32px;background:linear-gradient(135deg,#f5efe6 0%,#ebe0d0 100%);border-radius:12px;border-left:4px solid #8B6914;">
+  <h3 style="margin:0 0 12px 0;color:#5A3A1F;font-size:20px;">传统民俗日期咨询</h3>
+  <p style="margin:0 0 20px 0;color:#6B5344;font-size:15px;line-height:1.8;">开工、开业、动土、乔迁等传统仪礼的日期参考与流程建议，基于岭南传统礼制与地方志研究，提供资料确认、日期参考、时辰建议、供品准备与现场注意事项的完整咨询。</p>
+  <a href="/guide-form" style="display:inline-block;padding:12px 32px;background:#8B6914;color:#fff;text-decoration:none;border-radius:6px;font-size:15px;font-weight:500;transition:background 0.3s;">免费领取商业开工指南</a>
+</div>
+
+<!-- 页脚 -->
+<footer>
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <strong>免责声明：</strong>本文为岭南传统文化研究，所引内容均出自地方志史料，不构成任何择日、起名、运势建议。<br>
+      <strong>研究范围声明：</strong>本文基于《始兴县志》《封川县志》《潮州府志》等地方志材料，覆盖广东始兴、封开、潮州等部分地区，不代表整个两广地区的统一情况。
+    </div>
+    <div>© 2026 知远风物志 · 岭南民俗文化研究平台</div>
+  </div>
+</footer>
+
+</body>
+</html>

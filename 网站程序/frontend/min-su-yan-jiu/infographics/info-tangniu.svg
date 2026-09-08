@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8DCC8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#5A3A1F" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8B4513"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="900" height="600" fill="url(#bgGrad)"/>
+
+  <!-- 标题 -->
+  <text x="450" y="50" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="28" fill="#2A190D" font-weight="bold">糖牛传说与"危言以动上"</text>
+  <text x="450" y="80" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="14" fill="#7A6B5D">地方社会如何用策略性叙事逃避贡赋压力</text>
+
+  <!-- 步骤1：朝廷要求进贡 -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="130" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="150" y="160" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#2A190D" font-weight="bold">① 朝廷征贡</text>
+    <text x="150" y="185" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">中央要求地方进贡糖牛</text>
+  </g>
+
+  <!-- 箭头1→2 -->
+  <line x1="240" y1="170" x2="310" y2="170" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 步骤2：地方面临压力 -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="130" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#8B3A3A" stroke-width="2"/>
+    <text x="400" y="160" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#8B3A3A" font-weight="bold">② 进贡压力</text>
+    <text x="400" y="185" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">捕捉成本高 · 民力耗损</text>
+  </g>
+
+  <!-- 箭头2→3 -->
+  <line x1="490" y1="170" x2="560" y2="170" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 步骤3：编造夸张叙事 -->
+  <g filter="url(#shadow)">
+    <rect x="560" y="130" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#8B4513" stroke-width="2"/>
+    <text x="650" y="160" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#2A190D" font-weight="bold">③ 策略性叙事</text>
+    <text x="650" y="185" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">"与蛇同穴" · "取之甚难"</text>
+  </g>
+
+  <!-- 箭头3→4（向下） -->
+  <line x1="650" y1="210" x2="650" y2="280" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 步骤4：危言以动上 -->
+  <g filter="url(#shadow)">
+    <rect x="560" y="280" width="180" height="80" rx="8" fill="#F0E6D6" stroke="#8B4513" stroke-width="2"/>
+    <text x="650" y="310" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#8B4513" font-weight="bold">④ 危言以动上</text>
+    <text x="650" y="335" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">用危险描述打动上级</text>
+  </g>
+
+  <!-- 箭头4→5（向左） -->
+  <line x1="560" y1="320" x2="490" y2="320" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 步骤5：减免贡赋 -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="280" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="400" y="310" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#2A190D" font-weight="bold">⑤ 减免贡赋</text>
+    <text x="400" y="335" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">上级减少或免除进贡</text>
+  </g>
+
+  <!-- 箭头5→6（向左） -->
+  <line x1="310" y1="320" x2="240" y2="320" stroke="#8B4513" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 步骤6：地方喘息 -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="280" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="150" y="310" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="16" fill="#2A190D" font-weight="bold">⑥ 民力得纾</text>
+    <text x="150" y="335" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">地方获得喘息空间</text>
+  </g>
+
+  <!-- 县志编者的拆穿 -->
+  <g filter="url(#shadow)">
+    <rect x="180" y="420" width="540" height="100" rx="8" fill="#2A190D" stroke="#8B4513" stroke-width="2"/>
+    <text x="450" y="455" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#E8DCC8" font-weight="bold">县志编者亲口拆穿</text>
+    <text x="450" y="485" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="13" fill="#C4B59E">"与蛇同穴"的夸张描述，是地方为逃避贡赋而编造的策略性叙事</text>
+    <text x="450" y="508" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#A89880">——《贵县志》编者按</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="450" y="560" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#7A6B5D">知远风物志 · 基于《贵县志》史料 · 岭南民俗文化研究</text>
+</svg>

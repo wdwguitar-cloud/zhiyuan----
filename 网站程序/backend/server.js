@@ -962,7 +962,8 @@ app.get(["/min-su-yan-jiu/", "/min-su-yan-jiu/index.html"], (req, res) => {
 });
 
 app.get(["/min-su-yan-jiu/:slug/", "/min-su-yan-jiu/:slug.html"], (req, res, next) => {
-  const slug = String(req.params.slug || "").replace(/[^a-z0-9-]/gi, "");
+  const rawSlug = String(req.params.slug || "");
+  const slug = decodeURIComponent(rawSlug).replace(/\.\.+/g, "").replace(/\.html$/i, "");
   if (!slug) return next();
   const filePath = path.join(LEGACY_FRONTEND_DIR, "min-su-yan-jiu", `${slug}.html`);
   if (fs.existsSync(filePath)) {

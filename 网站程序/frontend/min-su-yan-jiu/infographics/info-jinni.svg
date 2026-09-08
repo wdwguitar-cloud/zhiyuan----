@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8DCC8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#5A3A1F" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="900" height="600" fill="url(#bgGrad2)"/>
+
+  <!-- 标题 -->
+  <text x="450" y="50" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="28" fill="#2A190D" font-weight="bold">清代地方官的"励俗"体系</text>
+  <text x="450" y="80" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="14" fill="#7A6B5D">禁溺女 · 禁火葬 · 禁停柩 · 戒风水——四位一体的儒家道德重塑</text>
+
+  <!-- 中心：励俗 -->
+  <g filter="url(#shadow2)">
+    <circle cx="450" cy="310" r="70" fill="#2A190D" stroke="#8B4513" stroke-width="3"/>
+    <text x="450" y="300" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="24" fill="#E8DCC8" font-weight="bold">励俗</text>
+    <text x="450" y="328" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#A89880">改善地方风俗</text>
+  </g>
+
+  <!-- 连接线 -->
+  <line x1="450" y1="240" x2="450" y2="170" stroke="#8B4513" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="390" y1="350" x2="200" y2="430" stroke="#8B4513" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="510" y1="350" x2="700" y2="430" stroke="#8B4513" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="390" y1="280" x2="200" y2="200" stroke="#8B4513" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="510" y1="280" x2="700" y2="200" stroke="#8B4513" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- 左上：禁溺女 -->
+  <g filter="url(#shadow2)">
+    <rect x="80" y="140" width="200" height="100" rx="8" fill="#FFFFFF" stroke="#8B3A3A" stroke-width="2"/>
+    <text x="180" y="170" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#8B3A3A" font-weight="bold">① 禁溺女</text>
+    <text x="180" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">生育道德</text>
+    <text x="180" y="218" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#7A6B5D">"天地好生，为父母者何忍"</text>
+  </g>
+
+  <!-- 右上：戒风水 -->
+  <g filter="url(#shadow2)">
+    <rect x="620" y="140" width="200" height="100" rx="8" fill="#FFFFFF" stroke="#8B4513" stroke-width="2"/>
+    <text x="720" y="170" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#8B4513" font-weight="bold">④ 戒风水</text>
+    <text x="720" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">信仰道德</text>
+    <text x="720" y="218" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#7A6B5D">"有地理而无天理也"</text>
+  </g>
+
+  <!-- 左下：禁火葬 -->
+  <g filter="url(#shadow2)">
+    <rect x="80" y="390" width="200" height="100" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="180" y="420" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#2A190D" font-weight="bold">② 禁火葬</text>
+    <text x="180" y="445" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">丧葬道德</text>
+    <text x="180" y="468" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#7A6B5D">"子孙暴露先人骸骨例有明条"</text>
+  </g>
+
+  <!-- 右下：禁停柩 -->
+  <g filter="url(#shadow2)">
+    <rect x="620" y="390" width="200" height="100" rx="8" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="2"/>
+    <text x="720" y="420" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="18" fill="#2A190D" font-weight="bold">③ 禁停柩</text>
+    <text x="720" y="445" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">丧葬道德</text>
+    <text x="720" y="468" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="11" fill="#7A6B5D">因求风水而停柩不葬</text>
+  </g>
+
+  <!-- 底部：治理逻辑 -->
+  <g filter="url(#shadow2)">
+    <rect x="150" y="520" width="600" height="60" rx="8" fill="#F0E6D6" stroke="#8B4513" stroke-width="2"/>
+    <text x="450" y="545" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="15" fill="#8B4513" font-weight="bold">治理逻辑：不用法律强制，用道德劝谕</text>
+    <text x="450" y="568" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="12" fill="#5A3A1F">四位一体的儒家道德体系，全面重塑地方社会的生育、丧葬与信仰</text>
+  </g>
+</svg>
