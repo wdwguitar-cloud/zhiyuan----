@@ -49,7 +49,32 @@
   .stat-card .num{font-size:28px;font-weight:800;color:#c9963b}
   .stat-card .label{font-size:12px;color:#8b765e;margin-top:4px}
   @media (max-width:900px){.admin-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
-</style>
+
+/* ===== 7阶段工作流样式 ===== */
+.workflow-nav{display:flex;gap:4px;margin-bottom:24px;background:#fff;border:1px solid #eadfce;border-radius:12px;padding:8px;overflow-x:auto}
+.workflow-step{flex:1;min-width:100px;padding:10px 8px;text-align:center;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.workflow-step:hover{background:#faf5ec}
+.workflow-step.active{background:linear-gradient(135deg,#c9963b,#a67c2e);color:#fff}
+.workflow-step.completed{background:#e8f5e9;border-color:#4a8c5f;color:#2e7d32}
+.workflow-step .step-num{font-size:18px;font-weight:800;display:block}
+.workflow-step .step-name{font-size:11px;font-weight:600;margin-top:2px;display:block}
+.workflow-panel{display:none;margin-bottom:24px}
+.workflow-panel.active{display:block}
+.checklist{background:#fffdf8;border:1px solid #eadfce;border-radius:10px;padding:16px;margin-bottom:16px}
+.checklist h4{font-size:14px;color:#5a3a1f;margin:0 0 10px 0;display:flex;align-items:center;gap:8px}
+.checklist-item{display:flex;align-items:flex-start;gap:8px;padding:6px 0;font-size:13px;color:#5a4a3a;cursor:pointer}
+.checklist-item:hover{color:#2a190d}
+.checklist-item input[type=checkbox]{margin-top:3px;accent-color:#c9963b}
+.checklist-item.checked{color:#8b765e;text-decoration:line-through}
+.qa-result{background:#fffdf8;border:1px solid #eadfce;border-radius:10px;padding:16px;margin-top:16px}
+.qa-pass{color:#2e7d32;font-weight:700}
+.qa-fail{color:#b34040;font-weight:700}
+.qa-item{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;border-bottom:1px solid #f0e8d8}
+.qa-item:last-child{border-bottom:none}
+.topic-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.topic-card-grid .form-group{margin-bottom:0}
+@media (max-width:900px){.topic-card-grid{grid-template-columns:1fr}.workflow-step{min-width:80px}.workflow-step .step-name{font-size:10px}}
+</style></style>
 </head>
 <body>
 <div class="admin-shell">
@@ -79,8 +104,55 @@
       </div>
     </div>
 
+    <!-- 7阶段工作流导航 -->
+    <div class="workflow-nav" id="workflowNav">
+      <div class="workflow-step active" data-step="1"><span class="step-num">1</span><span class="step-name">选题确认</span></div>
+      <div class="workflow-step" data-step="2"><span class="step-num">2</span><span class="step-name">史料准备</span></div>
+      <div class="workflow-step" data-step="3"><span class="step-num">3</span><span class="step-name">内容创作</span></div>
+      <div class="workflow-step" data-step="4"><span class="step-num">4</span><span class="step-name">内容质检</span></div>
+      <div class="workflow-step" data-step="5"><span class="step-num">5</span><span class="step-name">GEO/SEO优化</span></div>
+      <div class="workflow-step" data-step="6"><span class="step-num">6</span><span class="step-name">部署上线</span></div>
+      <div class="workflow-step" data-step="7"><span class="step-num">7</span><span class="step-name">分发推广</span></div>
+    </div>
+
+    <!-- 步骤1：选题确认 -->
+    <div class="workflow-panel active" id="panel-1">
+      <div class="panel">
+        <h2>步骤1：选题确认（选题卡9部分）</h2>
+        <p style="color:#8b765e;font-size:13px;margin-bottom:16px">填写选题卡核心字段，确保选题有价值、有史料、有边界、无风险。9部分全部填写后才能进入写作。</p>
+        <div class="topic-card-grid">
+          <div class="form-group"><label>核心问题（搜索者视角）*</label><input id="tc-question" placeholder="如：墟日为什么是一四七二五八三六九？"></div>
+          <div class="form-group"><label>文章标题（问题式）*</label><input id="tc-title" placeholder="如：墟日趁墟的由来与墟期规则"></div>
+          <div class="form-group"><label>分类 *</label><select id="tc-category"><option>岁时节令+人生仪礼</option><option>起名文化（预留）</option><option>民间信仰+祭祀制度</option><option>族群文化+地域风俗</option><option>社会历史+人口现象</option></select></div>
+          <div class="form-group"><label>子分类</label><input id="tc-subcategory" placeholder="如：墟期制度、迎春仪式"></div>
+          <div class="form-group"><label>核心史料（地方志）*</label><input id="tc-sources" placeholder="如：《始兴县志》《封川县志》"></div>
+          <div class="form-group"><label>范围边界*</label><input id="tc-scope" placeholder="如：粤北粤东部分地区，不代表整个岭南"></div>
+        </div>
+        <div class="form-group" style="margin-top:12px"><label>研究价值（为什么值得写）</label><textarea id="tc-value" rows="2" placeholder="简述选题的学术价值、搜索潜力、差异化角度" style="min-height:60px"></textarea></div>
+        <div class="btn-group"><button type="button" class="btn btn-gold" onclick="goToStep(2)">确认选题，进入史料准备 →</button></div>
+      </div>
+    </div>
+
+    <!-- 步骤2：史料准备 -->
+    <div class="workflow-panel" id="panel-2">
+      <div class="panel">
+        <h2>步骤2：史料准备（四要素+证据矩阵）</h2>
+        <div class="checklist">
+          <h4>📚 史料四要素检查清单</h4>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 地方志直接记载（书名+卷次+章节）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 史料出处精确描述（不是泛化条目）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 范围与证据矩阵（哪些结论有哪些史料支撑）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 概念分层（区分容易混淆的概念）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 史料不足处已明确说明（不强行概括）</label>
+        </div>
+        <div class="btn-group"><button type="button" class="btn btn-outline" onclick="goToStep(1)">← 返回选题</button><button type="button" class="btn btn-gold" onclick="goToStep(3)">史料准备完成，进入内容创作 →</button></div>
+      </div>
+    </div>
+
     <div class="stat-row" id="statRow"></div>
 
+    <!-- 步骤3：内容创作 -->
+    <div class="workflow-panel" id="panel-3">
     <div class="admin-grid">
       <!-- 左侧：文章列表 -->
       <div class="panel">
@@ -136,6 +208,88 @@
             <button type="button" class="btn btn-outline" id="resetBtn" style="margin-left:auto">清空</button>
           </div>
         </form>
+      </div>
+    </div>
+      <div class="btn-group" style="margin-top:16px"><button type="button" class="btn btn-outline" onclick="goToStep(2)">← 返回史料准备</button><button type="button" class="btn btn-gold" onclick="runQACheck()">运行内容质检 →</button></div>
+    </div>
+
+    <!-- 步骤4：内容质检 -->
+    <div class="workflow-panel" id="panel-4">
+      <div class="panel">
+        <h2>步骤4：内容质检（6大类+文风7层+禁止事项）</h2>
+        <div class="checklist">
+          <h4>✅ 6大类质检清单</h4>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 问题式标题（包含问号）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 场景化首段（有具体地名/时间/人物）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 个人署名（作者：王知远）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 研究者手记（100-150字，有具体细节）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 观众质疑模块（2个质疑+回应）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 素材库调用（观点/价值观/骨架）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 参考资料零泛化（每条都有具体出处）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 禁止事项检查（无择日师自述、无内部标注、无免责式开头）</label>
+        </div>
+        <div class="qa-result" id="qaResult" style="display:none">
+          <h4 style="margin-top:0">🔍 自动QA检查结果</h4>
+          <div id="qaContent"></div>
+        </div>
+        <div class="btn-group" style="margin-top:16px"><button type="button" class="btn btn-outline" onclick="goToStep(3)">← 返回内容创作</button><button type="button" class="btn btn-gold" onclick="goToStep(5)">质检通过，进入GEO/SEO优化 →</button></div>
+      </div>
+    </div>
+
+    <!-- 步骤5：GEO/SEO优化 -->
+    <div class="workflow-panel" id="panel-5">
+      <div class="panel">
+        <h2>步骤5：GEO/SEO优化（技术SEO+内链+文件名）</h2>
+        <div class="checklist">
+          <h4>🔧 技术SEO检查清单</h4>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> meta description 150-160字</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> canonical URL正确（zongsengzxone.cn）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> OG标签完整（og:title/description/image）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> Twitter card完整</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> Article schema正确（author=Person）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> FAQ schema（JSON-LD）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 中文文件名（GEO-XX-XX_关键词.html）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 内链互引（related-read，2-3篇相关文章）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 转化区域（cta-section，传统民俗日期咨询）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> title分隔符统一（｜全角竖线）</label>
+        </div>
+        <div class="btn-group" style="margin-top:16px"><button type="button" class="btn btn-outline" onclick="goToStep(4)">← 返回质检</button><button type="button" class="btn btn-gold" onclick="goToStep(6)">优化完成，进入部署上线 →</button></div>
+      </div>
+    </div>
+
+    <!-- 步骤6：部署上线 -->
+    <div class="workflow-panel" id="panel-6">
+      <div class="panel">
+        <h2>步骤6：部署上线（验证200+301+Git）</h2>
+        <div class="checklist">
+          <h4>🚀 部署检查清单</h4>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> HTML文件已复制到min-su-yan-jiu目录</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 本地验证返回200（http://localhost:8787/...）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 旧URL 301重定向生效（如涉及）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> sitemap自动包含新文章（动态扫描）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> Git提交（commit message清晰）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> Git推送到远程仓库</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 线上验证可访问</label>
+        </div>
+        <div class="btn-group" style="margin-top:16px"><button type="button" class="btn btn-outline" onclick="goToStep(5)">← 返回优化</button><button type="button" class="btn btn-gold" onclick="goToStep(7)">部署完成，进入分发推广 →</button></div>
+      </div>
+    </div>
+
+    <!-- 步骤7：分发推广 -->
+    <div class="workflow-panel" id="panel-7">
+      <div class="panel">
+        <h2>步骤7：分发推广（官网首发+平台拆分）</h2>
+        <div class="checklist">
+          <h4>📢 分发检查清单</h4>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 官网首发（知识库已上线）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 公众号版本（故事感+情绪+转发，核心事实一致）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 小红书版本（图文+种草感，核心事实一致）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 知乎版本（深度+问答，核心事实一致）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 抖音口播版本（口语化+钩子，核心事实一致）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 各平台核心事实一致（不改变史料、范围、结论）</label>
+          <label class="checklist-item"><input type="checkbox" onchange="toggleCheck(this)"> 各平台最终自然指向官网知识库</label>
+        </div>
+        <div class="btn-group" style="margin-top:16px"><button type="button" class="btn btn-outline" onclick="goToStep(6)">← 返回部署</button><button type="button" class="btn btn-gold" onclick="showToast('🎉 7阶段工作流全部完成！', 'success')">✅ 全部完成</button></div>
       </div>
     </div>
 
@@ -366,6 +520,66 @@ async function removeArticle(slug) {
 // 初始化
 document.querySelector('input[name=publishDate]').value = new Date().toISOString().slice(0,10);
 loadArticles();
-</script>
+
+// ===== 7阶段工作流JS =====
+let currentStep = 1;
+
+function goToStep(step) {
+  currentStep = step;
+  // 更新导航条状态
+  document.querySelectorAll('.workflow-step').forEach(el => {
+    const s = parseInt(el.dataset.step);
+    el.classList.remove('active', 'completed');
+    if (s === step) el.classList.add('active');
+    else if (s < step) el.classList.add('completed');
+  });
+  // 更新面板显示
+  document.querySelectorAll('.workflow-panel').forEach(el => el.classList.remove('active'));
+  document.getElementById('panel-' + step).classList.add('active');
+  // 滚动到顶部
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// 导航条点击
+document.querySelectorAll('.workflow-step').forEach(el => {
+  el.addEventListener('click', () => goToStep(parseInt(el.dataset.step)));
+});
+
+function toggleCheck(checkbox) {
+  checkbox.parentElement.classList.toggle('checked', checkbox.checked);
+}
+
+// 前端QA检查（基于Markdown内容）
+function runQACheck() {
+  const markdown = document.querySelector('textarea[name=markdown]').value || '';
+  const result = document.getElementById('qaResult');
+  const content = document.getElementById('qaContent');
+  result.style.display = 'block';
+  
+  const checks = [
+    {name: '问题式标题（包含问号）', pass: /[？?]/.test(markdown.split('\n')[0] || '')},
+    {name: '场景化首段（有具体地名/时间）', pass: /(光绪|嘉庆|乾隆|道光|高要|兴宁|曲江|吴川|贵县|始兴|遂溪|嘉应|儋州|百色|柳州|连山|龙胜|雷州)/.test(markdown.substring(0, 500))},
+    {name: '个人署名（王知远）', pass: markdown.includes('王知远')},
+    {name: '研究者手记', pass: markdown.includes('研究者手记')},
+    {name: '观众质疑模块', pass: markdown.includes('观众质疑') || markdown.includes('质疑')},
+    {name: '参考资料（有具体出处）', pass: markdown.includes('参考资料') && /《[^》]+志[^》]*》/.test(markdown)},
+    {name: '地方志引用（至少3处）', pass: (markdown.match(/《[^》]+(志|风土记)[^》]*》/g) || []).length >= 3},
+    {name: '无择日师自述', pass: !markdown.includes('择日师')},
+    {name: 'FAQ（至少3个问答）', pass: (markdown.match(/Q[1-9]：/g) || markdown.match(/^##.*问/gm) || []).length >= 3 || markdown.includes('常见问题')},
+  ];
+  
+  const passCount = checks.filter(c => c.pass).length;
+  let html = `<p style="margin-bottom:12px"><strong>检查结果：${passCount}/${checks.length} 项通过</strong> `;
+  html += passCount === checks.length ? '<span class="qa-pass">✅ 全部通过</span>' : '<span class="qa-fail">⚠️ 部分未通过</span>';
+  html += '</p>';
+  
+  checks.forEach(c => {
+    html += `<div class="qa-item"><span>${c.name}</span><span class="${c.pass ? 'qa-pass' : 'qa-fail'}">${c.pass ? '✅ 通过' : '❌ 未通过'}</span></div>`;
+  });
+  
+  content.innerHTML = html;
+  goToStep(4);
+}
+</script></script>
 </body>
 </html>
