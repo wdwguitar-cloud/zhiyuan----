@@ -30,19 +30,19 @@ const PUBLIC_SITEMAP_ENTRIES = [
   { path: "/partner.html", changefreq: "monthly", priority: "0.7" },
   { path: "/profile.html", changefreq: "monthly", priority: "0.7" },
   { path: "/min-su-yan-jiu/", changefreq: "weekly", priority: "0.8" },
-  { path: "/min-su-yan-jiu/guangdong-guangxi-kaishi-zeri/", changefreq: "monthly", priority: "0.8" },
-  { path: "/min-su-yan-jiu/lingnan-jiaqu-zeri-lishi/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/lingnan-anzhang-zeri-fengshui/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/ershisi-jieqi-lingnan-nongshi/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/huangli-yiji-laiyuan-yanbian/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/guangxi-jiu-zhi-xuqi-hun-su/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/liang-guang-qi-ming-bi-hui/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/lingnan-zibei-zongzu-zhuancheng/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/lingnan-xiaoming-daming-xisu/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/lingnan-suishi-jinji-jielv/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/lingnan-jisi-lishi-yanbian/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/lingnan-jizao-zaoshen-xinyang/", changefreq: "monthly", priority: "0.7" },
-  { path: "/min-su-yan-jiu/shixing-sheji-tandi-sheji/", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-02_%E4%B8%A4%E5%B9%BF%E5%BC%80%E5%B8%82%E6%8B%A9%E6%97%A5%E4%B8%8E%E5%A2%9F%E6%9C%9F%E4%B9%A0%E4%BF%97.html", changefreq: "monthly", priority: "0.8" },
+  { path: "/min-su-yan-jiu/GEO-06-07_%E5%B2%AD%E5%8D%97%E5%AB%81%E5%A8%B6%E6%8B%A9%E6%97%A5%E4%B8%8E%E5%85%AD%E7%A4%BC%E5%90%88%E5%A9%9A%E8%80%83.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-06_%E5%B2%AD%E5%8D%97%E5%AE%89%E8%91%AC%E6%8B%A9%E6%97%A5%E4%B8%8E%E9%A3%8E%E6%B0%B4%E7%A6%81%E5%BF%8C.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-01_%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94%E4%B8%8E%E5%B2%AD%E5%8D%97%E5%86%9C%E4%BA%8B%E6%8B%A9%E5%90%89%E4%B9%A0%E4%BF%97.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-04_%E9%BB%84%E5%8E%86%E6%97%B6%E5%AE%AA%E4%B9%A6%E4%B8%8E%E5%AE%98%E6%96%B9%E6%8B%A9%E6%97%A5%E5%88%B6%E5%BA%A6.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-03_%E5%B9%BF%E8%A5%BF%E6%97%A7%E5%BF%97%E5%A9%9A%E4%BF%97%E4%B8%8E%E5%A2%9F%E6%9C%9F%E5%9C%B0%E5%9F%9F%E5%B7%AE%E5%BC%82.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-05_%E4%B8%A4%E5%B9%BF%E8%B5%B7%E5%90%8D%E4%B8%8E%E9%81%BF%E8%AE%B3%E4%B9%A0%E4%BF%97%E8%80%83.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-12_%E5%B2%AD%E5%8D%97%E5%AD%97%E8%BE%88%E6%96%87%E5%8C%96%E4%B8%8E%E5%AE%97%E6%97%8F%E4%BC%A0%E6%89%BF.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-11_%E5%B2%AD%E5%8D%97%E5%B0%8F%E5%90%8D%E5%A4%A7%E5%90%8D%E4%B9%A0%E4%BF%97%E8%80%83.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-10_%E5%B2%AD%E5%8D%97%E5%B2%81%E6%97%B6%E4%B9%A0%E4%BF%97%E4%B8%8E%E7%94%9F%E6%B4%BB%E8%8A%82%E5%BE%8B.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-08_%E5%B2%AD%E5%8D%97%E7%A5%AD%E7%A5%80%E4%B9%A0%E4%BF%97%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98%E8%80%83.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-09_%E5%B2%AD%E5%8D%97%E7%A5%AD%E7%81%B6%E4%B9%A0%E4%BF%97%E4%B8%8E%E7%81%B6%E7%A5%9E%E4%BF%A1%E4%BB%B0.html", changefreq: "monthly", priority: "0.7" },
+  { path: "/min-su-yan-jiu/GEO-06-13_%E5%A7%8B%E5%85%B4%E7%A4%BE%E7%A8%B7%E5%9D%9B%E4%B8%8E%E5%AE%98%E6%96%B9%E7%A4%BE%E7%A5%AD%E8%80%83.html", changefreq: "monthly", priority: "0.7" },
   { path: "/min-su-yan-jiu/GEO-01-01_%E5%A2%9F%E6%97%A5%E8%B6%81%E5%A2%9F%E7%9A%84%E7%94%B1%E6%9D%A5%E4%B8%8E%E5%A2%9F%E6%9C%9F%E8%A7%84%E5%88%99.html", changefreq: "monthly", priority: "0.8" },
   { path: "/min-su-yan-jiu/GEO-01-02_%E5%BA%9A%E5%B8%96%E5%90%88%E5%85%AB%E5%AD%97%E4%B8%8E%E9%80%81%E6%97%A5%E5%AD%90%E6%B5%81%E7%A8%8B.html", changefreq: "monthly", priority: "0.7" },
   { path: "/min-su-yan-jiu/GEO-01-04_%E7%AB%8B%E6%98%A5%E6%89%93%E6%98%A5%E7%89%9B%E7%9A%84%E7%94%B1%E6%9D%A5%E4%B8%8E%E4%BB%AA%E5%BC%8F%E7%BB%86%E8%8A%82.html", changefreq: "monthly", priority: "0.8" },
@@ -976,6 +976,22 @@ app.get(["/guide-form", "/guide-form/"], (req, res) => {
 app.get(["/min-su-yan-jiu/", "/min-su-yan-jiu/index.html"], (req, res) => {
   return res.sendFile(path.join(LEGACY_FRONTEND_DIR, "min-su-yan-jiu", "index.html"));
 });
+
+
+// 旧拼音URL 301重定向到新中文URL
+app.get("/min-su-yan-jiu/guangdong-guangxi-kaishi-zeri/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-02_%E4%B8%A4%E5%B9%BF%E5%BC%80%E5%B8%82%E6%8B%A9%E6%97%A5%E4%B8%8E%E5%A2%9F%E6%9C%9F%E4%B9%A0%E4%BF%97.html"));
+app.get("/min-su-yan-jiu/lingnan-jiaqu-zeri-lishi/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-07_%E5%B2%AD%E5%8D%97%E5%AB%81%E5%A8%B6%E6%8B%A9%E6%97%A5%E4%B8%8E%E5%85%AD%E7%A4%BC%E5%90%88%E5%A9%9A%E8%80%83.html"));
+app.get("/min-su-yan-jiu/lingnan-anzhang-zeri-fengshui/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-06_%E5%B2%AD%E5%8D%97%E5%AE%89%E8%91%AC%E6%8B%A9%E6%97%A5%E4%B8%8E%E9%A3%8E%E6%B0%B4%E7%A6%81%E5%BF%8C.html"));
+app.get("/min-su-yan-jiu/ershisi-jieqi-lingnan-nongshi/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-01_%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94%E4%B8%8E%E5%B2%AD%E5%8D%97%E5%86%9C%E4%BA%8B%E6%8B%A9%E5%90%89%E4%B9%A0%E4%BF%97.html"));
+app.get("/min-su-yan-jiu/huangli-yiji-laiyuan-yanbian/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-04_%E9%BB%84%E5%8E%86%E6%97%B6%E5%AE%AA%E4%B9%A6%E4%B8%8E%E5%AE%98%E6%96%B9%E6%8B%A9%E6%97%A5%E5%88%B6%E5%BA%A6.html"));
+app.get("/min-su-yan-jiu/guangxi-jiu-zhi-xuqi-hun-su/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-03_%E5%B9%BF%E8%A5%BF%E6%97%A7%E5%BF%97%E5%A9%9A%E4%BF%97%E4%B8%8E%E5%A2%9F%E6%9C%9F%E5%9C%B0%E5%9F%9F%E5%B7%AE%E5%BC%82.html"));
+app.get("/min-su-yan-jiu/liang-guang-qi-ming-bi-hui/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-05_%E4%B8%A4%E5%B9%BF%E8%B5%B7%E5%90%8D%E4%B8%8E%E9%81%BF%E8%AE%B3%E4%B9%A0%E4%BF%97%E8%80%83.html"));
+app.get("/min-su-yan-jiu/lingnan-zibei-zongzu-zhuancheng/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-12_%E5%B2%AD%E5%8D%97%E5%AD%97%E8%BE%88%E6%96%87%E5%8C%96%E4%B8%8E%E5%AE%97%E6%97%8F%E4%BC%A0%E6%89%BF.html"));
+app.get("/min-su-yan-jiu/lingnan-xiaoming-daming-xisu/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-11_%E5%B2%AD%E5%8D%97%E5%B0%8F%E5%90%8D%E5%A4%A7%E5%90%8D%E4%B9%A0%E4%BF%97%E8%80%83.html"));
+app.get("/min-su-yan-jiu/lingnan-suishi-jinji-jielv/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-10_%E5%B2%AD%E5%8D%97%E5%B2%81%E6%97%B6%E4%B9%A0%E4%BF%97%E4%B8%8E%E7%94%9F%E6%B4%BB%E8%8A%82%E5%BE%8B.html"));
+app.get("/min-su-yan-jiu/lingnan-jisi-lishi-yanbian/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-08_%E5%B2%AD%E5%8D%97%E7%A5%AD%E7%A5%80%E4%B9%A0%E4%BF%97%E5%8E%86%E5%8F%B2%E6%BC%94%E5%8F%98%E8%80%83.html"));
+app.get("/min-su-yan-jiu/lingnan-jizao-zaoshen-xinyang/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-09_%E5%B2%AD%E5%8D%97%E7%A5%AD%E7%81%B6%E4%B9%A0%E4%BF%97%E4%B8%8E%E7%81%B6%E7%A5%9E%E4%BF%A1%E4%BB%B0.html"));
+app.get("/min-su-yan-jiu/shixing-sheji-tandi-sheji/", (req, res) => res.redirect(301, "/min-su-yan-jiu/GEO-06-13_%E5%A7%8B%E5%85%B4%E7%A4%BE%E7%A8%B7%E5%9D%9B%E4%B8%8E%E5%AE%98%E6%96%B9%E7%A4%BE%E7%A5%AD%E8%80%83.html"));
 
 app.get(["/min-su-yan-jiu/:slug/", "/min-su-yan-jiu/:slug.html"], (req, res, next) => {
   const rawSlug = String(req.params.slug || "");
