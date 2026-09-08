@@ -13,10 +13,13 @@ const CATEGORY_MAP = {
   "01": { category: "择吉习俗", label: "择吉习俗" },
   "02": { category: "起名文化", label: "起名文化" },
   "03": { category: "岁时信仰", label: "岁时信仰" },
-  "04": { category: "族群地域", label: "族群地域" }
+  "04": { category: "族群地域", label: "族群地域" },
+  "05": { category: "社会历史", label: "社会历史" },
+  "06": { category: "旧文改造", label: "旧文改造" },
+  "07": { category: "新创作", label: "新创作" }
 };
 
-const CATEGORY_ORDER = ["择吉习俗", "起名文化", "岁时信仰", "族群地域"];
+const CATEGORY_ORDER = ["择吉习俗", "起名文化", "岁时信仰", "族群地域", "社会历史", "旧文改造", "新创作"];
 
 function ensureDirs() {
   fs.mkdirSync(ARTICLES_DIR, { recursive: true });
@@ -486,10 +489,80 @@ function deleteArticle(slug) {
 }
 
 /**
+ * 从HTML文件中提取元数据
+ */
+function extractMetaFromHtml(filePath, fileName) {
+  try {
+    const html = fs.readFileSync(filePath, "utf8");
+    // 提取title
+    const titleMatch = html.match(/<title>([^<]+)<\/title>/);
+    let title = titleMatch ? titleMatch[1] : fileName.replace(/\.html$/, "");
+    // 去掉品牌后缀
+    title = title.replace(/[｜|]\s*知远风物志\s*$/, "").trim();
+    
+    // 提取meta description
+    const descMatch = html.match(/<meta name="description" content="([^"]+)"/);
+    const description = descMatch ? descMatch[1].substring(0, 100) + "..." : "";
+    
+    // 从文件名推断分类
+    const catInfo = inferCategoryFromFilename(fileName);
+    
+    // 提取发布日期（从HTML中找，或者用文件修改时间）
+    const dateMatch = html.match(/(\d{4})[-年](\d{1,2})[-月](\d{1,2})/);
+    const publishDate = dateMatch ? `${dateMatch[1]}-${dateMatch[2].padStart(2, "0")}-${dateMatch[3].padStart(2, "0")}` : "";
+    
+    return {
+      slug: fileName.replace(/\.html$/, ""),
+      fileName,
+      title,
+      description,
+      category: catInfo.category,
+      subcategory: "",
+      publishDate,
+      wordCount: html.length,
+      source: "html-scan"
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
+/**
+ * 扫描HTML目录，自动生成文章列表
+ */
+function scanHtmlArticles() {
+  const articles = [];
+  if (!fs.existsSync(ARTICLES_DIR)) return articles;
+  
+  const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.startsWith("GEO-") && f.endsWith(".html"));
+  for (const file of files) {
+    const meta = extractMetaFromHtml(path.join(ARTICLES_DIR, file), file);
+    if (meta) articles.push(meta);
+  }
+  return articles;
+}
+
+/**
  * 获取文章列表（按分类分组）
+ * 优先从articles.json读取，如果为空则自动扫描HTML目录
  */
 function listArticles() {
-  const index = readIndex();
+  let index = readIndex();
+  
+  // 如果articles.json为空，自动扫描HTML目录
+  if (!index.articles || index.articles.length === 0) {
+    const scanned = scanHtmlArticles();
+    if (scanned.length > 0) {
+      index = { articles: scanned };
+      // 自动保存到articles.json，方便后续使用
+      try {
+        writeIndex(index);
+      } catch (e) {
+        // 忽略写入错误
+      }
+    }
+  }
+  
   const grouped = {};
   for (const cat of CATEGORY_ORDER) grouped[cat] = [];
   for (const a of index.articles) {
@@ -515,6 +588,9 @@ module.exports = {
   deleteArticle,
   listArticles,
   inferCategoryFromFilename,
+  scanHtmlArticles,
+  extractMetaFromHtml,
   CATEGORY_ORDER,
+  CATEGORY_MAP,
   ARTICLES_DIR
 };
