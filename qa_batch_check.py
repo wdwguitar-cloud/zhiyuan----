@@ -108,8 +108,10 @@ def check_article_batch(file_path):
     # F. 技术SEO
     meta_desc_match = re.search(r'<meta name="description" content="([^"]+)"', content)
     meta_desc = meta_desc_match.group(1) if meta_desc_match else ""
-    if len(meta_desc) < 100 or len(meta_desc) > 200:
-        issues.append(f"F1.meta description长度={len(meta_desc)}")
+    # 将转义字符还原后计算实际长度
+    meta_desc_actual = meta_desc.replace('&quot;', '"').replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+    if len(meta_desc_actual) < 150 or len(meta_desc_actual) > 165:
+        issues.append(f"F1.meta description长度={len(meta_desc_actual)}")
     
     if 'canonical' not in content or 'zongsengzxone.cn' not in content:
         issues.append("F2.canonical URL错误")
