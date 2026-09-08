@@ -173,6 +173,23 @@ function buildSitemapXml(origin) {
     }
   }
 
+  // 动态扫描风物志文章目录，自动添加到sitemap
+  try {
+    const articleDir = path.resolve(__dirname, "..", "frontend", "min-su-yan-jiu");
+    if (fs.existsSync(articleDir)) {
+      const articleFiles = fs.readdirSync(articleDir).filter(f => f.startsWith("GEO-") && f.endsWith(".html"));
+      for (const filename of articleFiles) {
+        const encodedName = encodeURIComponent(filename);
+        const articlePath = `/min-su-yan-jiu/${encodedName}`;
+        if (!entries.some(entry => entry.path === articlePath)) {
+          entries.push({ path: articlePath, changefreq: "monthly", priority: "0.7" });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("[sitemap] 动态扫描文章目录失败:", e.message);
+  }
+
   const today = nowISO().slice(0, 10);
   const lines = entries.map(entry => `  <url><loc>${origin}${entry.path}</loc><lastmod>${today}</lastmod><changefreq>${entry.changefreq}</changefreq><priority>${entry.priority}</priority></url>`);
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${lines.join("\n")}\n</urlset>\n`;
