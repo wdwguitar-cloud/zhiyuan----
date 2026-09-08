@@ -265,12 +265,14 @@ function parseMarkdown(md) {
 }
 
 /**
- * 生成完整 HTML 页面
+ * 生成完整 HTML 页面（V1.2规范）
  */
-function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, subcategory, publishDate, scopeNotice, disclaimer }) {
+function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, subcategory, publishDate, scopeNotice, disclaimer, authorNote, audienceQuestions }) {
   const kicker = subcategory ? `${category} · ${subcategory}` : category;
   const breadcrumbName = title.length > 20 ? title.slice(0, 20) + "…" : title;
   const description = lead ? lead.slice(0, 160) : title;
+  const canonicalUrl = `https://zongsengzxone.cn/min-su-yan-jiu/${slug}.html`;
+  const heroImage = `/min-su-yan-jiu/images/hero-${slug}.jpg`;
 
   const faqJson = faqList.length > 0 ? JSON.stringify({
     "@context": "https://schema.org",
@@ -287,20 +289,21 @@ function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, s
     "@type": "Article",
     "headline": title,
     "description": description,
-    "author": { "@type": "Organization", "name": "知远风物志" },
+    "author": { "@type": "Person", "name": "王知远", "url": "https://zongsengzxone.cn/about.html" },
     "publisher": { "@type": "Organization", "name": "知远风物志" },
     "datePublished": publishDate,
     "dateModified": publishDate,
-    "inLanguage": "zh-CN"
+    "inLanguage": "zh-CN",
+    "image": heroImage
   }, null, 2);
 
   const breadcrumbJson = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首页", "item": "/" },
-      { "@type": "ListItem", "position": 2, "name": "风物知识库", "item": "/min-su-yan-jiu/" },
-      { "@type": "ListItem", "position": 3, "name": breadcrumbName }
+      { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://zongsengzxone.cn/" },
+      { "@type": "ListItem", "position": 2, "name": "风物知识库", "item": "https://zongsengzxone.cn/min-su-yan-jiu/" },
+      { "@type": "ListItem", "position": 3, "name": breadcrumbName, "item": canonicalUrl }
     ]
   }, null, 2);
 
@@ -314,6 +317,21 @@ function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, s
             免责声明：本文为岭南传统文化研究，所引内容均出自地方志史料，不构成任何择日、起名、运势建议。
           </div>`;
 
+  // 研究者手记
+  const authorNoteHtml = authorNote ? `
+        <div class="author-note">
+          <strong>研究者手记：</strong>${inlineFormat(authorNote)}
+        </div>` : "";
+
+  // 观众质疑模块
+  let audienceHtml = "";
+  if (audienceQuestions && audienceQuestions.length > 0) {
+    audienceHtml = `<h2>两个常见质疑，以及${escapeHtml(category)}的社会史解读</h2>\n`;
+    audienceQuestions.forEach((q, idx) => {
+      audienceHtml += `<div class="audience-question">\n  <div class="question">质疑${idx === 0 ? "一" : "二"}：${escapeHtml(q.question)}</div>\n  <div class="answer">${inlineFormat(q.answer)}</div>\n</div>\n`;
+    });
+  }
+
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -321,13 +339,22 @@ function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, s
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}｜知远风物志</title>
   <meta name="description" content="${escapeHtml(description)}">
-  <meta name="author" content="知远风物志">
-  <link rel="canonical" href="/min-su-yan-jiu/${slug}/">
+  <meta name="keywords" content="${escapeHtml(category)},${escapeHtml(title)},岭南民俗,地方志,知远风物志">
+  <meta name="author" content="王知远">
+  <link rel="canonical" href="${canonicalUrl}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:image" content="${heroImage}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:site_name" content="知远风物志">
   <meta property="article:published_time" content="${publishDate}">
-  <link rel="stylesheet" href="/styles.css">
+  <meta property="article:author" content="王知远">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${heroImage}">
+  <link rel="stylesheet" href="/min-su-yan-jiu/styles.css">
   <script type="application/ld+json">
   ${articleJson}
   </script>
@@ -337,33 +364,6 @@ function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, s
   <script type="application/ld+json">
   ${faqJson}
   </script>` : ""}
-  <style>
-    .article-shell{min-height:100vh;background:linear-gradient(180deg,#f8f5ef 0%,#fff 38%)}
-    .article-main{padding:54px 0 84px}
-    .article-wrap{max-width:860px;margin:0 auto}
-    .breadcrumbs{margin-bottom:22px;color:#8b765e;font-size:14px}
-    .breadcrumbs a{text-decoration:underline;text-decoration-color:#d8b982;text-underline-offset:3px}
-    .article-kicker{display:inline-block;padding:6px 11px;border:1px solid #ead8b4;border-radius:999px;color:#7f5b1b;background:#fff7e7;font-size:13px;font-weight:800}
-    .article-title{margin:18px 0 14px;font-size:44px;line-height:1.25;letter-spacing:.01em}
-    .article-lead{margin:0 0 28px;padding:22px 24px;border-left:4px solid var(--gold);border-radius:0 14px 14px 0;background:#fffaf0;color:#4d5c71;font-size:18px;line-height:1.9}
-    .article-meta{color:#8b765e;font-size:13px;margin-bottom:36px}
-    .article-body{padding:34px 38px;background:#fff;border:1px solid #eadfce;border-radius:22px;box-shadow:0 14px 34px rgba(61,43,22,.06)}
-    .article-body h2{margin:34px 0 14px;padding-top:8px;font-size:27px;line-height:1.5;border-top:1px solid #efe5d8}
-    .article-body h2:first-child{margin-top:0;border-top:0}
-    .article-body h3{margin:24px 0 10px;font-size:20px;line-height:1.55}
-    .article-body p{margin:0 0 17px;color:#34465d;font-size:16px;line-height:1.95}
-    .article-body strong{color:#6b4514}
-    .article-body blockquote{margin:18px 0;padding:14px 18px;border-left:4px solid #d6b36d;background:#fffaf0;color:#5d4a35}
-    .article-body table{width:100%;border-collapse:collapse;margin:18px 0 24px;background:#fff}
-    .article-body th,.article-body td{padding:12px;border:1px solid #dfd4c5;text-align:left;vertical-align:top;line-height:1.7}
-    .article-body th{background:#f8f1e5;color:#5a3d15}
-    .article-body .faq-question{margin-top:24px;margin-bottom:6px;font-size:18px}
-    .article-body .source-list{padding-left:22px;color:#34465d;line-height:1.9}
-    .article-body .notice{margin-top:28px;padding:18px;border-radius:14px;background:#f8f5ef;color:#6b6258;font-size:14px;line-height:1.8}
-    .article-footer-links{display:flex;justify-content:space-between;gap:16px;margin-top:22px}
-    .article-footer-links a{color:#7f5b1b;font-weight:800}
-    @media (max-width:720px){.article-main{padding:30px 0 56px}.article-title{font-size:26px;line-height:1.42;letter-spacing:0}.article-kicker{font-size:12px;padding:5px 9px}.article-lead{font-size:16px;line-height:1.85;padding:18px}.article-body{padding:24px 18px;border-radius:16px}.article-body h2{margin:30px 0 12px;font-size:20px;line-height:1.55}.article-body h3{margin:22px 0 8px;font-size:17px;line-height:1.6}.article-body .faq-question{font-size:17px;line-height:1.6}.article-body p{font-size:16px;line-height:1.9}.article-body table{font-size:14px;display:block;overflow-x:auto;white-space:normal}.article-footer-links{flex-direction:column}}
-  </style>
 </head>
 <body>
   <div class="article-shell">
@@ -373,22 +373,31 @@ function generateArticleHtml({ slug, title, lead, bodyHtml, faqList, category, s
         <nav>
           <a href="/">首页</a>
           <a class="active" href="/min-su-yan-jiu/">风物知识库</a>
-          <a href="/cases.html">案例</a>
+          <a href="/about.html">关于</a>
           <a href="/guide-form#lead-form">联系</a>
         </nav>
-        <div class="header-actions"><a class="btn btn-outline btn-small" href="/min-su-yan-jiu/">知识库首页</a></div>
       </div>
     </header>
     <main class="article-main">
       <div class="container article-wrap">
         <div class="breadcrumbs"><a href="/">首页</a>　/　<a href="/min-su-yan-jiu/">风物知识库</a>　/　${escapeHtml(breadcrumbName)}</div>
-        <span class="article-kicker">${escapeHtml(kicker)}</span>
-        <h1 class="article-title">${inlineFormat(title)}</h1>
-        <p class="article-lead">${inlineFormat(lead)}</p>
-        <div class="article-meta">知远风物志　·　发布日期：${publishDate}　·　研究型文章</div>
+        <div class="hero">
+          <div class="hero-category">${escapeHtml(category)}</div>
+          <h1 class="hero-title">${inlineFormat(title)}</h1>
+          <div class="hero-meta">作者：王知远　·　知远风物志　·　发布日期：${publishDate}　·　研究型文章</div>
+        </div>
+        <div class="overview-card">
+          <p>${inlineFormat(lead)}</p>
+        </div>
+        ${authorNoteHtml}
         <article class="article-body">
-${bodyHtml}${noticeHtml}
+${bodyHtml}${audienceHtml}${noticeHtml}
         </article>
+        <div class="cta-section">
+          <h3>传统民俗日期咨询</h3>
+          <p>开工、开业、动土、嫁娶等场景的传统民俗日期参考，基于岭南地方志与民间口述史料。</p>
+          <a href="/guide-form" class="cta-button">免费咨询</a>
+        </div>
         <div class="article-footer-links">
           <a href="/min-su-yan-jiu/">← 返回风物知识库</a>
           <a href="/guide-form#lead-form">了解相关服务 →</a>
@@ -401,7 +410,6 @@ ${bodyHtml}${noticeHtml}
         <div>
           <h4>知识库</h4>
           <a href="/min-su-yan-jiu/">民俗研究</a>
-          <a href="/min-su-yan-jiu/${slug}/">${escapeHtml(breadcrumbName)}</a>
         </div>
         <div><p class="footer-teacher-line">传统文化研究 · 地方志史料整理</p></div>
       </div>
