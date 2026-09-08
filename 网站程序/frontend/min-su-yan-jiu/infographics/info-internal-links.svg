@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
   <defs>
     <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#F5F0E8;stop-opacity:1" />
@@ -51,100 +51,100 @@
   <g filter="url(#shadow5)">
     <rect x="100" y="145" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="180" y="172" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">墟日趁墟</text>
-    <text x="180" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">最高潜力 · 搜索流量型</text>
+    <text x="180" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D"></text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="100" y="230" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="180" y="257" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">庚帖合八字</text>
-    <text x="180" y="280" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">高搜索量 · 搜索流量型</text>
+    <text x="180" y="280" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D"></text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="300" y="145" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B4513" stroke-width="1.5"/>
     <text x="380" y="172" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">立春打春牛</text>
-    <text x="380" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方礼制 · 搜索流量型</text>
+    <text x="380" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方礼制</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="300" y="265" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B3A3A" stroke-width="1.5"/>
     <text x="380" y="292" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">贞节牌坊制度</text>
-    <text x="380" y="315" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">女性史 · 搜索流量型</text>
+    <text x="380" y="315" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">女性史</text>
   </g>
 
   <!-- 岁时信仰文章卡片 -->
   <g filter="url(#shadow5)">
     <rect x="500" y="145" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="580" y="172" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">先农坛与籍田礼</text>
-    <text x="580" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方礼制 · 搜索流量型</text>
+    <text x="580" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方礼制</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="700" y="145" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B4513" stroke-width="1.5"/>
     <text x="780" y="172" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">城隍祭祀与告城隍文</text>
-    <text x="780" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方礼制 · 搜索流量型</text>
+    <text x="780" y="195" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方礼制</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="500" y="230" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="580" y="257" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">端午龙舟竞渡</text>
-    <text x="580" y="280" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">岁时节令 · 搜索流量型</text>
+    <text x="580" y="280" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">岁时节令</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="700" y="230" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B4513" stroke-width="1.5"/>
     <text x="780" y="257" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">中元节与厉坛制度</text>
-    <text x="780" y="280" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方祭祀 · 搜索流量型</text>
+    <text x="780" y="280" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">官方祭祀</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="600" y="315" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="680" y="342" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">文庙风水与科举兴衰</text>
-    <text x="680" y="365" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">科举制度 · 搜索流量型</text>
+    <text x="680" y="365" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">科举制度</text>
   </g>
 
   <!-- 族群地域文章卡片 -->
   <g filter="url(#shadow5)">
     <rect x="500" y="385" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A7A3A" stroke-width="1.5"/>
     <text x="580" y="412" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">八排瑶成年礼</text>
-    <text x="580" y="435" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">八排瑶系列 · 品牌深度型</text>
+    <text x="580" y="435" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">八排瑶系列</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="700" y="385" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A7A3A" stroke-width="1.5"/>
     <text x="780" y="412" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">八排瑶身体训练</text>
-    <text x="780" y="435" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">八排瑶系列 · 品牌深度型</text>
+    <text x="780" y="435" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">八排瑶系列</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="500" y="470" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="580" y="497" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">糖牛传说与贡赋博弈</text>
-    <text x="580" y="520" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">策略性叙事 · 品牌深度型</text>
+    <text x="580" y="520" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">策略性叙事</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="700" y="470" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="780" y="497" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">柳州鸡卜与柳宗元教化</text>
-    <text x="780" y="520" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">边地信仰 · 品牌深度型</text>
+    <text x="780" y="520" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">边地信仰</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="600" y="555" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#5A3A1F" stroke-width="1.5"/>
     <text x="680" y="582" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">高要县民风全景</text>
-    <text x="680" y="605" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">环境塑造文化 · 品牌深度型</text>
+    <text x="680" y="605" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">环境塑造文化</text>
   </g>
 
   <!-- 社会历史文章卡片 -->
   <g filter="url(#shadow5)">
     <rect x="100" y="505" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B3A3A" stroke-width="1.5"/>
     <text x="180" y="532" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">禁溺女劝谕与生育困境</text>
-    <text x="180" y="555" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">女性史 · 品牌深度型</text>
+    <text x="180" y="555" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">女性史</text>
   </g>
 
   <g filter="url(#shadow5)">
     <rect x="300" y="505" width="160" height="70" rx="6" fill="#FFFFFF" stroke="#8B3A3A" stroke-width="1.5"/>
     <text x="380" y="532" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="13" fill="#2A190D" font-weight="bold">耆寿寿考与古代长寿现象</text>
-    <text x="380" y="555" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">寿命分布 · 品牌深度型</text>
+    <text x="380" y="555" text-anchor="middle" font-family="Noto Serif SC, SimSun, serif" font-size="10" fill="#7A6B5D">寿命分布</text>
   </g>
 
   <!-- 底部统计 -->
